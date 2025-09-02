@@ -588,6 +588,17 @@ html {
     margin: 0;
 }
 
+.px-footer-bottom a {
+    color: var(--px-gray-300);
+    text-decoration: underline;
+    transition: var(--px-transition);
+}
+
+.px-footer-bottom a:hover {
+    color: var(--px-green-400);
+    text-decoration: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .px-header-logo {
