@@ -8,7 +8,7 @@
  * @license     MIT License
  * @since       1.0.0
  * @version     1.0.0
- * @link        https://bitbucket.org/vernsix/primordyx/CLI/Commands/VersionCommand.php
+ * @link        https://github.com/vernsix/primordyx/blob/master/CLI/Commands/VersionCommand.php
  *
  */
 
