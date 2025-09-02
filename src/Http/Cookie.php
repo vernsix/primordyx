@@ -8,7 +8,7 @@
  * @license     MIT License
  * @since       1.0.0
  * @version     1.0.0
- * @link        https://github.com/vernsix/primordyx/blob/master/src/Cookie.php
+ * @link        https://github.com/vernsix/primordyx/blob/master/src/Http/Cookie.php
  *
  */
 

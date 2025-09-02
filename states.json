@@ -1,0 +1,1786 @@
+{
+
+
+  "AL": {
+    "abbreviation": "AL",
+    "name": "Alabama",
+    "capital": "Montgomery",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "South",
+    "fips": "01",
+    "admitted": 1819,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "Yellowhammer State",
+    "bird": "Yellowhammer",
+    "flower": "Camellia",
+    "tree": "Longleaf Pine",
+    "motto": "We Dare Defend Our Rights",
+    "isState": true,
+    "isoCode": "US-AL",
+    "constitutionalOrder": 22,
+    "culturalRegion": "Deep South",
+    "borders": ["TN", "GA", "FL", "MS"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "AK": {
+    "abbreviation": "AK",
+    "name": "Alaska",
+    "capital": "Juneau",
+    "timezone": "Alaska",
+    "timezoneOffset": {
+      "standard": "-09:00",
+      "daylight": "-08:00"
+    },
+    "timezoneAbbr": {
+      "standard": "AKST",
+      "daylight": "AKDT"
+    },
+    "region": "West",
+    "fips": "02",
+    "admitted": 1959,
+    "isContiguous": false,
+    "hasDST": true,
+    "nickname": "The Last Frontier",
+    "bird": "Willow Ptarmigan",
+    "flower": "Forget-me-not",
+    "tree": "Sitka Spruce",
+    "motto": "North to the Future",
+    "isState": true,
+    "isoCode": "US-AK",
+    "constitutionalOrder": 49,
+    "culturalRegion": "Frontier",
+    "borders": [],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-WWII"
+  },
+
+  "AZ": {
+    "abbreviation": "AZ",
+    "name": "Arizona",
+    "capital": "Phoenix",
+    "timezone": "Mountain",
+    "timezoneOffset": {
+      "standard": "-07:00",
+      "daylight": "-07:00"
+    },
+    "timezoneAbbr": {
+      "standard": "MST",
+      "daylight": "MST"
+    },
+    "region": "West",
+    "fips": "04",
+    "admitted": 1912,
+    "isContiguous": true,
+    "hasDST": false,
+    "nickname": "Grand Canyon State",
+    "bird": "Cactus Wren",
+    "flower": "Saguaro Cactus Blossom",
+    "tree": "Palo Verde",
+    "motto": "Ditat Deus",
+    "isState": true,
+    "isoCode": "US-AZ",
+    "constitutionalOrder": 48,
+    "culturalRegion": "Southwest",
+    "borders": ["CA", "NV", "UT", "NM", "CO"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "AR": {
+    "abbreviation": "AR",
+    "name": "Arkansas",
+    "capital": "Little Rock",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "South",
+    "fips": "05",
+    "admitted": 1836,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Natural State",
+    "bird": "Northern Mockingbird",
+    "flower": "Apple Blossom",
+    "tree": "Loblolly Pine",
+    "motto": "Regnat Populus",
+    "isState": true,
+    "isoCode": "US-AR",
+    "constitutionalOrder": 25,
+    "culturalRegion": "Deep South",
+    "borders": ["MO", "TN", "MS", "LA", "TX", "OK"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "CA": {
+    "abbreviation": "CA",
+    "name": "California",
+    "capital": "Sacramento",
+    "timezone": "Pacific",
+    "timezoneOffset": {
+      "standard": "-08:00",
+      "daylight": "-07:00"
+    },
+    "timezoneAbbr": {
+      "standard": "PST",
+      "daylight": "PDT"
+    },
+    "region": "West",
+    "fips": "06",
+    "admitted": 1850,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Golden State",
+    "bird": "California Quail",
+    "flower": "California Poppy",
+    "tree": "Coast Redwood",
+    "motto": "Eureka",
+    "isState": true,
+    "isoCode": "US-CA",
+    "constitutionalOrder": 31,
+    "culturalRegion": "Pacific Coast",
+    "borders": ["OR", "NV", "AZ"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "CO": {
+    "abbreviation": "CO",
+    "name": "Colorado",
+    "capital": "Denver",
+    "timezone": "Mountain",
+    "timezoneOffset": {
+      "standard": "-07:00",
+      "daylight": "-06:00"
+    },
+    "timezoneAbbr": {
+      "standard": "MST",
+      "daylight": "MDT"
+    },
+    "region": "West",
+    "fips": "08",
+    "admitted": 1876,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Centennial State",
+    "bird": "Lark Bunting",
+    "flower": "Rocky Mountain Columbine",
+    "tree": "Colorado Blue Spruce",
+    "motto": "Nil sine numine",
+    "isState": true,
+    "isoCode": "US-CO",
+    "constitutionalOrder": 38,
+    "culturalRegion": "Mountain West",
+    "borders": ["WY", "NE", "KS", "OK", "NM", "AZ", "UT"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "CT": {
+    "abbreviation": "CT",
+    "name": "Connecticut",
+    "capital": "Hartford",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "09",
+    "admitted": 1788,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Constitution State",
+    "bird": "American Robin",
+    "flower": "Mountain Laurel",
+    "tree": "White Oak",
+    "motto": "Qui transtulit sustinet",
+    "isState": true,
+    "isoCode": "US-CT",
+    "constitutionalOrder": 5,
+    "culturalRegion": "New England",
+    "borders": ["NY", "MA", "RI"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "DE": {
+    "abbreviation": "DE",
+    "name": "Delaware",
+    "capital": "Dover",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "10",
+    "admitted": 1787,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The First State",
+    "bird": "Delaware Blue Hen",
+    "flower": "Peach Blossom",
+    "tree": "American Holly",
+    "motto": "Liberty and Independence",
+    "isState": true,
+    "isoCode": "US-DE",
+    "constitutionalOrder": 1,
+    "culturalRegion": "Mid-Atlantic",
+    "borders": ["MD", "PA", "NJ"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "FL": {
+    "abbreviation": "FL",
+    "name": "Florida",
+    "capital": "Tallahassee",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "12",
+    "admitted": 1845,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Sunshine State",
+    "bird": "Northern Mockingbird",
+    "flower": "Orange Blossom",
+    "tree": "Sabal Palm",
+    "motto": "In God We Trust",
+    "isState": true,
+    "isoCode": "US-FL",
+    "constitutionalOrder": 27,
+    "culturalRegion": "Deep South",
+    "borders": ["GA", "AL"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "GA": {
+    "abbreviation": "GA",
+    "name": "Georgia",
+    "capital": "Atlanta",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "13",
+    "admitted": 1788,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Peach State",
+    "bird": "Brown Thrasher",
+    "flower": "Cherokee Rose",
+    "tree": "Live Oak",
+    "motto": "Wisdom, Justice, Moderation",
+    "isState": true,
+    "isoCode": "US-GA",
+    "constitutionalOrder": 4,
+    "culturalRegion": "Deep South",
+    "borders": ["FL", "AL", "TN", "NC", "SC"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "HI": {
+    "abbreviation": "HI",
+    "name": "Hawaii",
+    "capital": "Honolulu",
+    "timezone": "Hawaii-Aleutian",
+    "timezoneOffset": {
+      "standard": "-10:00",
+      "daylight": "-10:00"
+    },
+    "timezoneAbbr": {
+      "standard": "HST",
+      "daylight": "HST"
+    },
+    "region": "West",
+    "fips": "15",
+    "admitted": 1959,
+    "isContiguous": false,
+    "hasDST": false,
+    "nickname": "The Aloha State",
+    "bird": "Nene",
+    "flower": "Hibiscus",
+    "tree": "Kukui",
+    "motto": "Ua Mau ke Ea o ka ʻĀina i ka Pono",
+    "isState": true,
+    "isoCode": "US-HI",
+    "constitutionalOrder": 50,
+    "culturalRegion": "Pacific Islands",
+    "borders": [],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-WWII"
+  },
+
+  "ID": {
+    "abbreviation": "ID",
+    "name": "Idaho",
+    "capital": "Boise",
+    "timezone": "Mountain",
+    "timezoneOffset": {
+      "standard": "-07:00",
+      "daylight": "-06:00"
+    },
+    "timezoneAbbr": {
+      "standard": "MST",
+      "daylight": "MDT"
+    },
+    "region": "West",
+    "fips": "16",
+    "admitted": 1890,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Gem State",
+    "bird": "Mountain Bluebird",
+    "flower": "Syringa",
+    "tree": "Western White Pine",
+    "motto": "Esto Perpetua",
+    "isState": true,
+    "isoCode": "US-ID",
+    "constitutionalOrder": 43,
+    "culturalRegion": "Mountain West",
+    "borders": ["WA", "MT", "WY", "UT", "NV", "OR"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "IL": {
+    "abbreviation": "IL",
+    "name": "Illinois",
+    "capital": "Springfield",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "17",
+    "admitted": 1818,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Prairie State",
+    "bird": "Northern Cardinal",
+    "flower": "Violet",
+    "tree": "White Oak",
+    "motto": "State Sovereignty, National Union",
+    "isState": true,
+    "isoCode": "US-IL",
+    "constitutionalOrder": 21,
+    "culturalRegion": "Great Lakes",
+    "borders": ["WI", "IA", "MO", "KY", "IN"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "IN": {
+    "abbreviation": "IN",
+    "name": "Indiana",
+    "capital": "Indianapolis",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Midwest",
+    "fips": "18",
+    "admitted": 1816,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Hoosier State",
+    "bird": "Northern Cardinal",
+    "flower": "Peony",
+    "tree": "Tulip Tree",
+    "motto": "The Crossroads of America",
+    "isState": true,
+    "isoCode": "US-IN",
+    "constitutionalOrder": 19,
+    "culturalRegion": "Great Lakes",
+    "borders": ["MI", "OH", "KY", "IL"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "IA": {
+    "abbreviation": "IA",
+    "name": "Iowa",
+    "capital": "Des Moines",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "19",
+    "admitted": 1846,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Hawkeye State",
+    "bird": "Eastern Goldfinch",
+    "flower": "Wild Prairie Rose",
+    "tree": "Bur Oak",
+    "motto": "Our liberties we prize and our rights we will maintain",
+    "isState": true,
+    "isoCode": "US-IA",
+    "constitutionalOrder": 29,
+    "culturalRegion": "Midwest",
+    "borders": ["MN", "WI", "IL", "MO", "NE", "SD"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "KS": {
+    "abbreviation": "KS",
+    "name": "Kansas",
+    "capital": "Topeka",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "20",
+    "admitted": 1861,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Sunflower State",
+    "bird": "Western Meadowlark",
+    "flower": "Sunflower",
+    "tree": "Cottonwood",
+    "motto": "Ad astra per aspera",
+    "isState": true,
+    "isoCode": "US-KS",
+    "constitutionalOrder": 34,
+    "culturalRegion": "Plains",
+    "borders": ["NE", "MO", "OK", "CO"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Civil War Era"
+  },
+
+  "KY": {
+    "abbreviation": "KY",
+    "name": "Kentucky",
+    "capital": "Frankfort",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "21",
+    "admitted": 1792,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Bluegrass State",
+    "bird": "Northern Cardinal",
+    "flower": "Goldenrod",
+    "tree": "Tulip Poplar",
+    "motto": "United we stand, divided we fall",
+    "isState": true,
+    "isoCode": "US-KY",
+    "constitutionalOrder": 15,
+    "culturalRegion": "Upper South",
+    "borders": ["IL", "IN", "OH", "WV", "VA", "TN", "MO"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Early Expansion"
+  },
+
+  "LA": {
+    "abbreviation": "LA",
+    "name": "Louisiana",
+    "capital": "Baton Rouge",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "South",
+    "fips": "22",
+    "admitted": 1812,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Pelican State",
+    "bird": "Brown Pelican",
+    "flower": "Magnolia",
+    "tree": "Bald Cypress",
+    "motto": "Union, justice, and confidence",
+    "isState": true,
+    "isoCode": "US-LA",
+    "constitutionalOrder": 18,
+    "culturalRegion": "Deep South",
+    "borders": ["TX", "AR", "MS"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "ME": {
+    "abbreviation": "ME",
+    "name": "Maine",
+    "capital": "Augusta",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "23",
+    "admitted": 1820,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Pine Tree State",
+    "bird": "Chickadee",
+    "flower": "White Pine Cone and Tassel",
+    "tree": "Eastern White Pine",
+    "motto": "Dirigo",
+    "isState": true,
+    "isoCode": "US-ME",
+    "constitutionalOrder": 23,
+    "culturalRegion": "New England",
+    "borders": ["NH"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "MD": {
+    "abbreviation": "MD",
+    "name": "Maryland",
+    "capital": "Annapolis",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "24",
+    "admitted": 1788,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Old Line State",
+    "bird": "Baltimore Oriole",
+    "flower": "Black-Eyed Susan",
+    "tree": "White Oak",
+    "motto": "Fatti maschii, parole femine",
+    "isState": true,
+    "isoCode": "US-MD",
+    "constitutionalOrder": 7,
+    "culturalRegion": "Mid-Atlantic",
+    "borders": ["PA", "DE", "VA", "WV"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "MA": {
+    "abbreviation": "MA",
+    "name": "Massachusetts",
+    "capital": "Boston",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "25",
+    "admitted": 1788,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Bay State",
+    "bird": "Black-capped Chickadee",
+    "flower": "Mayflower",
+    "tree": "American Elm",
+    "motto": "Ense petit placidam sub libertate quietem",
+    "isState": true,
+    "isoCode": "US-MA",
+    "constitutionalOrder": 6,
+    "culturalRegion": "New England",
+    "borders": ["NH", "VT", "NY", "CT", "RI"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "MI": {
+    "abbreviation": "MI",
+    "name": "Michigan",
+    "capital": "Lansing",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Midwest",
+    "fips": "26",
+    "admitted": 1837,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Great Lakes State",
+    "bird": "American Robin",
+    "flower": "Apple Blossom",
+    "tree": "Eastern White Pine",
+    "motto": "Si quaeris peninsulam amoenam circumspice",
+    "isState": true,
+    "isoCode": "US-MI",
+    "constitutionalOrder": 26,
+    "culturalRegion": "Great Lakes",
+    "borders": ["OH", "IN", "WI", "MN"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "MN": {
+    "abbreviation": "MN",
+    "name": "Minnesota",
+    "capital": "Saint Paul",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "27",
+    "admitted": 1858,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The North Star State",
+    "bird": "Common Loon",
+    "flower": "Pink and White Lady's Slipper",
+    "tree": "Red Pine",
+    "motto": "L'Étoile du Nord",
+    "isState": true,
+    "isoCode": "US-MN",
+    "constitutionalOrder": 32,
+    "culturalRegion": "Upper Midwest",
+    "borders": ["ND", "SD", "IA", "WI"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "MS": {
+    "abbreviation": "MS",
+    "name": "Mississippi",
+    "capital": "Jackson",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "South",
+    "fips": "28",
+    "admitted": 1817,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Magnolia State",
+    "bird": "Northern Mockingbird",
+    "flower": "Magnolia",
+    "tree": "Magnolia",
+    "motto": "Virtute et Armis",
+    "isState": true,
+    "isoCode": "US-MS",
+    "constitutionalOrder": 20,
+    "culturalRegion": "Deep South",
+    "borders": ["TN", "AL", "LA", "AR"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "MO": {
+    "abbreviation": "MO",
+    "name": "Missouri",
+    "capital": "Jefferson City",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "29",
+    "admitted": 1821,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Show-Me State",
+    "bird": "Eastern Bluebird",
+    "flower": "Hawthorn",
+    "tree": "Flowering Dogwood",
+    "motto": "Salus populi suprema lex esto",
+    "isState": true,
+    "isoCode": "US-MO",
+    "constitutionalOrder": 24,
+    "culturalRegion": "Plains",
+    "borders": ["IA", "IL", "KY", "TN", "AR", "OK", "KS", "NE"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "MT": {
+    "abbreviation": "MT",
+    "name": "Montana",
+    "capital": "Helena",
+    "timezone": "Mountain",
+    "timezoneOffset": {
+      "standard": "-07:00",
+      "daylight": "-06:00"
+    },
+    "timezoneAbbr": {
+      "standard": "MST",
+      "daylight": "MDT"
+    },
+    "region": "West",
+    "fips": "30",
+    "admitted": 1889,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Treasure State",
+    "bird": "Western Meadowlark",
+    "flower": "Bitterroot",
+    "tree": "Ponderosa Pine",
+    "motto": "Oro y Plata",
+    "isState": true,
+    "isoCode": "US-MT",
+    "constitutionalOrder": 41,
+    "culturalRegion": "Mountain West",
+    "borders": ["ND", "SD", "WY", "ID"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "NE": {
+    "abbreviation": "NE",
+    "name": "Nebraska",
+    "capital": "Lincoln",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "31",
+    "admitted": 1867,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Cornhusker State",
+    "bird": "Western Meadowlark",
+    "flower": "Goldenrod",
+    "tree": "Eastern Cottonwood",
+    "motto": "Equality Before the Law",
+    "isState": true,
+    "isoCode": "US-NE",
+    "constitutionalOrder": 37,
+    "culturalRegion": "Plains",
+    "borders": ["SD", "IA", "MO", "KS", "CO", "WY"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "NV": {
+    "abbreviation": "NV",
+    "name": "Nevada",
+    "capital": "Carson City",
+    "timezone": "Pacific",
+    "timezoneOffset": {
+      "standard": "-08:00",
+      "daylight": "-07:00"
+    },
+    "timezoneAbbr": {
+      "standard": "PST",
+      "daylight": "PDT"
+    },
+    "region": "West",
+    "fips": "32",
+    "admitted": 1864,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Silver State",
+    "bird": "Mountain Bluebird",
+    "flower": "Sagebrush",
+    "tree": "Single-leaf Pinyon",
+    "motto": "All for Our Country",
+    "isState": true,
+    "isoCode": "US-NV",
+    "constitutionalOrder": 36,
+    "culturalRegion": "Mountain West",
+    "borders": ["CA", "OR", "ID", "UT", "AZ"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Civil War Era"
+  },
+
+  "NH": {
+    "abbreviation": "NH",
+    "name": "New Hampshire",
+    "capital": "Concord",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "33",
+    "admitted": 1788,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Granite State",
+    "bird": "Purple Finch",
+    "flower": "Purple Lilac",
+    "tree": "White Birch",
+    "motto": "Live Free or Die",
+    "isState": true,
+    "isoCode": "US-NH",
+    "constitutionalOrder": 9,
+    "culturalRegion": "New England",
+    "borders": ["ME", "MA", "VT"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "NJ": {
+    "abbreviation": "NJ",
+    "name": "New Jersey",
+    "capital": "Trenton",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "34",
+    "admitted": 1787,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Garden State",
+    "bird": "Eastern Goldfinch",
+    "flower": "Violet",
+    "tree": "Northern Red Oak",
+    "motto": "Liberty and Prosperity",
+    "isState": true,
+    "isoCode": "US-NJ",
+    "constitutionalOrder": 3,
+    "culturalRegion": "Mid-Atlantic",
+    "borders": ["NY", "PA", "DE"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "NY": {
+    "abbreviation": "NY",
+    "name": "New York",
+    "capital": "Albany",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "36",
+    "admitted": 1788,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Empire State",
+    "bird": "Eastern Bluebird",
+    "flower": "Rose",
+    "tree": "Sugar Maple",
+    "motto": "Excelsior",
+    "isState": true,
+    "isoCode": "US-NY",
+    "constitutionalOrder": 11,
+    "culturalRegion": "Mid-Atlantic",
+    "borders": ["NJ", "PA", "CT", "MA", "VT"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "NC": {
+    "abbreviation": "NC",
+    "name": "North Carolina",
+    "capital": "Raleigh",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "37",
+    "admitted": 1789,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Tar Heel State",
+    "bird": "Northern Cardinal",
+    "flower": "Dogwood",
+    "tree": "Pine",
+    "motto": "Esse quam videri",
+    "isState": true,
+    "isoCode": "US-NC",
+    "constitutionalOrder": 12,
+    "culturalRegion": "South Atlantic",
+    "borders": ["VA", "SC", "GA", "TN"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "ND": {
+    "abbreviation": "ND",
+    "name": "North Dakota",
+    "capital": "Bismarck",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "38",
+    "admitted": 1889,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Peace Garden State",
+    "bird": "Western Meadowlark",
+    "flower": "Wild Prairie Rose",
+    "tree": "American Elm",
+    "motto": "Liberty and union, now and forever, one and inseparable",
+    "isState": true,
+    "isoCode": "US-ND",
+    "constitutionalOrder": 39,
+    "culturalRegion": "Great Plains",
+    "borders": ["MT", "SD", "MN", "IA", "NE"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "OH": {
+    "abbreviation": "OH",
+    "name": "Ohio",
+    "capital": "Columbus",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Midwest",
+    "fips": "39",
+    "admitted": 1803,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Buckeye State",
+    "bird": "Northern Cardinal",
+    "flower": "Carnation",
+    "tree": "Ohio Buckeye",
+    "motto": "With God, all things are possible",
+    "isState": true,
+    "isoCode": "US-OH",
+    "constitutionalOrder": 17,
+    "culturalRegion": "Great Lakes",
+    "borders": ["PA", "WV", "KY", "IN", "MI"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "OK": {
+    "abbreviation": "OK",
+    "name": "Oklahoma",
+    "capital": "Oklahoma City",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "South",
+    "fips": "40",
+    "admitted": 1907,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Sooner State",
+    "bird": "Scissor-tailed Flycatcher",
+    "flower": "Oklahoma Rose",
+    "tree": "Eastern Redbud",
+    "motto": "Labor omnia vincit",
+    "isState": true,
+    "isoCode": "US-OK",
+    "constitutionalOrder": 46,
+    "culturalRegion": "Plains",
+    "borders": ["KS", "MO", "AR", "TX", "NM"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-WWII"
+  },
+
+  "OR": {
+    "abbreviation": "OR",
+    "name": "Oregon",
+    "capital": "Salem",
+    "timezone": "Pacific",
+    "timezoneOffset": {
+      "standard": "-08:00",
+      "daylight": "-07:00"
+    },
+    "timezoneAbbr": {
+      "standard": "PST",
+      "daylight": "PDT"
+    },
+    "region": "West",
+    "fips": "41",
+    "admitted": 1859,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Beaver State",
+    "bird": "Western Meadowlark",
+    "flower": "Oregon Grape",
+    "tree": "Douglas Fir",
+    "motto": "She flies with her own wings",
+    "isState": true,
+    "isoCode": "US-OR",
+    "constitutionalOrder": 33,
+    "culturalRegion": "Pacific Northwest",
+    "borders": ["WA", "ID", "NV", "CA"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "PA": {
+    "abbreviation": "PA",
+    "name": "Pennsylvania",
+    "capital": "Harrisburg",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "42",
+    "admitted": 1787,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Keystone State",
+    "bird": "Ruffed Grouse",
+    "flower": "Mountain Laurel",
+    "tree": "Eastern Hemlock",
+    "motto": "Virtue, liberty, and independence",
+    "isState": true,
+    "isoCode": "US-PA",
+    "constitutionalOrder": 2,
+    "culturalRegion": "Mid-Atlantic",
+    "borders": ["NY", "NJ", "DE", "MD", "WV", "OH"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "RI": {
+    "abbreviation": "RI",
+    "name": "Rhode Island",
+    "capital": "Providence",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "44",
+    "admitted": 1790,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Ocean State",
+    "bird": "Rhode Island Red",
+    "flower": "Violet",
+    "tree": "Red Maple",
+    "motto": "Hope",
+    "isState": true,
+    "isoCode": "US-RI",
+    "constitutionalOrder": 13,
+    "culturalRegion": "New England",
+    "borders": ["MA", "CT"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "SC": {
+    "abbreviation": "SC",
+    "name": "South Carolina",
+    "capital": "Columbia",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "45",
+    "admitted": 1788,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Palmetto State",
+    "bird": "Carolina Wren",
+    "flower": "Yellow Jasmine",
+    "tree": "Cabbage Palmetto",
+    "motto": "Dum spiro spero",
+    "isState": true,
+    "isoCode": "US-SC",
+    "constitutionalOrder": 8,
+    "culturalRegion": "Deep South",
+    "borders": ["NC", "GA"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "SD": {
+    "abbreviation": "SD",
+    "name": "South Dakota",
+    "capital": "Pierre",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "46",
+    "admitted": 1889,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "Mount Rushmore State",
+    "bird": "Ring-necked Pheasant",
+    "flower": "Pasque Flower",
+    "tree": "Black Hills Spruce",
+    "motto": "Under God the people rule",
+    "isState": true,
+    "isoCode": "US-SD",
+    "constitutionalOrder": 40,
+    "culturalRegion": "Great Plains",
+    "borders": ["ND", "MN", "IA", "NE", "WY", "MT"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "TN": {
+    "abbreviation": "TN",
+    "name": "Tennessee",
+    "capital": "Nashville",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "South",
+    "fips": "47",
+    "admitted": 1796,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Volunteer State",
+    "bird": "Northern Mockingbird",
+    "flower": "Iris",
+    "tree": "Tulip Poplar",
+    "motto": "Agriculture and Commerce",
+    "isState": true,
+    "isoCode": "US-TN",
+    "constitutionalOrder": 16,
+    "culturalRegion": "Appalachian",
+    "borders": ["KY", "VA", "NC", "GA", "AL", "MS", "AR", "MO"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Early Expansion"
+  },
+
+  "TX": {
+    "abbreviation": "TX",
+    "name": "Texas",
+    "capital": "Austin",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "South",
+    "fips": "48",
+    "admitted": 1845,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Lone Star State",
+    "bird": "Northern Mockingbird",
+    "flower": "Bluebonnet",
+    "tree": "Pecan",
+    "motto": "Friendship",
+    "isState": true,
+    "isoCode": "US-TX",
+    "constitutionalOrder": 28,
+    "culturalRegion": "Southwest",
+    "borders": ["OK", "AR", "LA", "NM"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "UT": {
+    "abbreviation": "UT",
+    "name": "Utah",
+    "capital": "Salt Lake City",
+    "timezone": "Mountain",
+    "timezoneOffset": {
+      "standard": "-07:00",
+      "daylight": "-06:00"
+    },
+    "timezoneAbbr": {
+      "standard": "MST",
+      "daylight": "MDT"
+    },
+    "region": "West",
+    "fips": "49",
+    "admitted": 1896,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Beehive State",
+    "bird": "California Gull",
+    "flower": "Sego Lily",
+    "tree": "Blue Spruce",
+    "motto": "Industry",
+    "isState": true,
+    "isoCode": "US-UT",
+    "constitutionalOrder": 45,
+    "culturalRegion": "Mountain West",
+    "borders": ["ID", "WY", "CO", "NM", "AZ", "NV"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "VT": {
+    "abbreviation": "VT",
+    "name": "Vermont",
+    "capital": "Montpelier",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "Northeast",
+    "fips": "50",
+    "admitted": 1791,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Green Mountain State",
+    "bird": "Hermit Thrush",
+    "flower": "Red Clover",
+    "tree": "Sugar Maple",
+    "motto": "Freedom and Unity",
+    "isState": true,
+    "isoCode": "US-VT",
+    "constitutionalOrder": 14,
+    "culturalRegion": "New England",
+    "borders": ["NH", "MA", "NY"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "VA": {
+    "abbreviation": "VA",
+    "name": "Virginia",
+    "capital": "Richmond",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "51",
+    "admitted": 1788,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Old Dominion",
+    "bird": "Northern Cardinal",
+    "flower": "Dogwood",
+    "tree": "Tulip Poplar",
+    "motto": "Sic semper tyrannis",
+    "isState": true,
+    "isoCode": "US-VA",
+    "constitutionalOrder": 10,
+    "culturalRegion": "Mid-Atlantic",
+    "borders": ["MD", "KY", "TN", "NC", "WV"],
+    "isOriginal13": true,
+    "hasRON": true,
+    "statehoodCategory": "Original Colony"
+  },
+
+  "WA": {
+    "abbreviation": "WA",
+    "name": "Washington",
+    "capital": "Olympia",
+    "timezone": "Pacific",
+    "timezoneOffset": {
+      "standard": "-08:00",
+      "daylight": "-07:00"
+    },
+    "timezoneAbbr": {
+      "standard": "PST",
+      "daylight": "PDT"
+    },
+    "region": "West",
+    "fips": "53",
+    "admitted": 1889,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Evergreen State",
+    "bird": "Willow Goldfinch",
+    "flower": "Coast Rhododendron",
+    "tree": "Western Hemlock",
+    "motto": "Alki",
+    "isState": true,
+    "isoCode": "US-WA",
+    "constitutionalOrder": 42,
+    "culturalRegion": "Pacific Northwest",
+    "borders": ["ID", "OR"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "WV": {
+    "abbreviation": "WV",
+    "name": "West Virginia",
+    "capital": "Charleston",
+    "timezone": "Eastern",
+    "timezoneOffset": {
+      "standard": "-05:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "EST",
+      "daylight": "EDT"
+    },
+    "region": "South",
+    "fips": "54",
+    "admitted": 1863,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Mountain State",
+    "bird": "Northern Cardinal",
+    "flower": "Rhododendron",
+    "tree": "Sugar Maple",
+    "motto": "Montani semper liberi",
+    "isState": true,
+    "isoCode": "US-WV",
+    "constitutionalOrder": 35,
+    "culturalRegion": "Appalachian",
+    "borders": ["PA", "MD", "VA", "KY", "OH"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "WI": {
+    "abbreviation": "WI",
+    "name": "Wisconsin",
+    "capital": "Madison",
+    "timezone": "Central",
+    "timezoneOffset": {
+      "standard": "-06:00",
+      "daylight": "-05:00"
+    },
+    "timezoneAbbr": {
+      "standard": "CST",
+      "daylight": "CDT"
+    },
+    "region": "Midwest",
+    "fips": "55",
+    "admitted": 1848,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Badger State",
+    "bird": "American Robin",
+    "flower": "Wood Violet",
+    "tree": "Sugar Maple",
+    "motto": "Forward",
+    "isState": true,
+    "isoCode": "US-WI",
+    "constitutionalOrder": 30,
+    "culturalRegion": "Great Lakes",
+    "borders": ["MN", "IA", "IL", "MI"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Pre-Civil War"
+  },
+
+  "WY": {
+    "abbreviation": "WY",
+    "name": "Wyoming",
+    "capital": "Cheyenne",
+    "timezone": "Mountain",
+    "timezoneOffset": {
+      "standard": "-07:00",
+      "daylight": "-06:00"
+    },
+    "timezoneAbbr": {
+      "standard": "MST",
+      "daylight": "MDT"
+    },
+    "region": "West",
+    "fips": "56",
+    "admitted": 1890,
+    "isContiguous": true,
+    "hasDST": true,
+    "nickname": "The Equality State",
+    "bird": "Western Meadowlark",
+    "flower": "Indian Paintbrush",
+    "tree": "Plains Cottonwood",
+    "motto": "Equal Rights",
+    "isState": true,
+    "isoCode": "US-WY",
+    "constitutionalOrder": 44,
+    "culturalRegion": "Mountain West",
+    "borders": ["MT", "SD", "NE", "CO", "UT", "ID"],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Post-Civil War"
+  },
+
+  "PR": {
+    "abbreviation": "PR",
+    "name": "Puerto Rico",
+    "capital": "San Juan",
+    "timezone": "Atlantic",
+    "timezoneOffset": {
+      "standard": "-04:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "AST",
+      "daylight": "ADT"
+    },
+    "region": "Territory",
+    "fips": "72",
+    "admitted": null,
+    "isContiguous": false,
+    "hasDST": false,
+    "nickname": "Isla del Encanto",
+    "bird": "Puerto Rican Spindalis",
+    "flower": "Flor de Maga",
+    "tree": "Ceiba",
+    "motto": "Joannes Est Nomen Ejus",
+    "isState": false,
+    "isoCode": "US-PR",
+    "constitutionalOrder": null,
+    "culturalRegion": "Caribbean",
+    "borders": [],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Territory"
+  },
+
+  "GU": {
+    "abbreviation": "GU",
+    "name": "Guam",
+    "capital": "Hagåtña",
+    "timezone": "Chamorro",
+    "timezoneOffset": {
+      "standard": "+10:00",
+      "daylight": "+10:00"
+    },
+    "timezoneAbbr": {
+      "standard": "ChST",
+      "daylight": "ChST"
+    },
+    "region": "Territory",
+    "fips": "66",
+    "admitted": null,
+    "isContiguous": false,
+    "hasDST": false,
+    "nickname": "Guahan",
+    "bird": "Micronesian Kingfisher",
+    "flower": "Bougainvillea",
+    "tree": "Coconut Palm",
+    "motto": "Where America's Day Begins",
+    "isState": false,
+    "isoCode": "US-GU",
+    "constitutionalOrder": null,
+    "culturalRegion": "Pacific Islands",
+    "borders": [],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Territory"
+  },
+
+  "VI": {
+    "abbreviation": "VI",
+    "name": "U.S. Virgin Islands",
+    "capital": "Charlotte Amalie",
+    "timezone": "Atlantic",
+    "timezoneOffset": {
+      "standard": "-04:00",
+      "daylight": "-04:00"
+    },
+    "timezoneAbbr": {
+      "standard": "AST",
+      "daylight": "ADT"
+    },
+    "region": "Territory",
+    "fips": "78",
+    "admitted": null,
+    "isContiguous": false,
+    "hasDST": false,
+    "nickname": "Virgin Islands",
+    "bird": "Brown Pelican",
+    "flower": "Yellow Cedar",
+    "tree": "Coconut Palm",
+    "motto": "United in Pride and Hope",
+    "isState": false,
+    "isoCode": "US-VI",
+    "constitutionalOrder": null,
+    "culturalRegion": "Caribbean",
+    "borders": [],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Territory"
+  },
+
+  "AS": {
+    "abbreviation": "AS",
+    "name": "American Samoa",
+    "capital": "Pago Pago",
+    "timezone": "Samoa",
+    "timezoneOffset": {
+      "standard": "-11:00",
+      "daylight": "-11:00"
+    },
+    "timezoneAbbr": {
+      "standard": "SST",
+      "daylight": "SDT"
+    },
+    "region": "Territory",
+    "fips": "60",
+    "admitted": null,
+    "isContiguous": false,
+    "hasDST": false,
+    "nickname": "America's Tropical Paradise",
+    "bird": "Pacific Golden Plover",
+    "flower": "Tiare",
+    "tree": "Coconut Palm",
+    "motto": "Samoa, Land of the Free",
+    "isState": false,
+    "isoCode": "US-AS",
+    "constitutionalOrder": null,
+    "culturalRegion": "Pacific Islands",
+    "borders": [],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Territory"
+  },
+
+  "MP": {
+    "abbreviation": "MP",
+    "name": "Northern Mariana Islands",
+    "capital": "Saipan",
+    "timezone": "Chamorro",
+    "timezoneOffset": {
+      "standard": "+10:00",
+      "daylight": "+10:00"
+    },
+    "timezoneAbbr": {
+      "standard": "ChST",
+      "daylight": "ChST"
+    },
+    "region": "Territory",
+    "fips": "69",
+    "admitted": null,
+    "isContiguous": false,
+    "hasDST": false,
+    "nickname": "The Marianas",
+    "bird": "Guam Kingfisher",
+    "flower": "Bougainvillea",
+    "tree": "Coconut Palm",
+    "motto": "United for a Better Future",
+    "isState": false,
+    "isoCode": "US-MP",
+    "constitutionalOrder": null,
+    "culturalRegion": "Pacific Islands",
+    "borders": [],
+    "isOriginal13": false,
+    "hasRON": true,
+    "statehoodCategory": "Territory"
+  }
+
+}
