@@ -1,0 +1,59 @@
+[app]
+name = 'My App'
+support_email = 'you@example.com'
+url = 'https://your_domain.com'
+environment = 'prod'
+timezone = 'America/Chicago'
+bot_secret_key = gajgfiqrkjgFGADgkug2345GGTWYHYwewf
+
+[auth]
+max_failed_attempts = 5
+lockout_duration = 900
+idle_timeout = 300
+
+[app_log]
+filename        = '/var/www/html/logs/system.log'
+chatter         = false
+silence         = false
+maxFileSize     = 2048000
+utc             = true
+allowed_levels  = 'EMERGENCY|ALERT|CRITICAL|ERROR|WARNING|INFO|SUCCESS|DEBUG|TRACE'
+use_log_id      = true
+
+[error_logging]
+enabled = true
+filename = '/var/www/html/logs/php_errors.log'
+
+[session]
+auth_idle_timeout = 20
+
+[debug]
+toolbar = false
+
+[crypto]
+# you should definitely change these
+iv = 'HWEHRbjshtlagegckjcoawqrAG753fde'
+key = 'b425bb5dd4063dgu14wqwqthyewyu867035675e8'
+
+[cookie]
+name = primordyx
+# 30 days in seconds...
+expiration_time = 25592000
+
+[mailgun]
+endpoint = 'https://api.mailgun.net/v3'
+suffix = '/messages'
+domain = 'mg.your_domain.com'
+api_key = '95dhewhry23fegywreyf9361c8f485fed730f1-7c5wew-4e9hrh85'
+
+[database_default]
+driver = 'mysql'
+host = 'localhost'
+port = '3306'
+database = 'db_name'
+username = 'db_user'
+password = 'db_pass'
+charset = 'utf8mb4'
+# Connection options
+timeout = 30
+persistent = false

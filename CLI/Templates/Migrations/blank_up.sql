@@ -1,0 +1,12 @@
+-- =============================================================================
+-- blank_up.sql
+-- =============================================================================
+-- Migration: {{MIGRATION_NAME}}
+-- Type: {{MIGRATION_TYPE}}
+-- Generated: {{TIMESTAMP}}
+-- Description: Custom migration - add your SQL here
+
+-- Add your custom SQL statements here
+-- Example:
+-- CREATE TABLE example (id INT PRIMARY KEY);
+-- INSERT INTO settings (key, value) VALUES ('version', '2.0');

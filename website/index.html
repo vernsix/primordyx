@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primordyx - Modern PHP Framework</title>
+    <meta name="description" content="Primordyx - A comprehensive PHP framework with secure authentication, bot detection, event-driven architecture, and PSR-4 compliance.">
+    <link rel="icon" type="image/png" href="primordyx-favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Logo Header -->
+<header class="px-logo-header">
+    <div class="px-container">
+        <div class="px-logo-container">
+            <img src="primordyx-logo.png" alt="Primordyx Framework Logo" class="px-header-logo">
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="px-hero">
+    <div class="px-container">
+        <div class="px-hero-content">
+            <div class="px-author-section">
+                <a href="#contact" class="px-author-link">
+                    <img src="vern-six-photo.jpg" alt="Vern Six - Framework Author" class="px-author-photo">
+                </a>
+                <div class="px-author-info">
+                    <span class="px-author-label">Created by</span>
+                    <strong class="px-author-name">Vern Six</strong>
+                </div>
+            </div>
+            <p class="px-hero-subtitle">Modern PHP Framework for Secure, Scalable Applications</p>
+            <p class="px-hero-description">
+                A comprehensive, enterprise-grade PHP framework with 50+ components, complete CLI tooling,
+                migration system, message queues, and everything needed for serious web application development.
+                Built for developers who need a complete, production-ready toolkit.
+            </p>
+            <div class="px-hero-actions">
+                <a href="#getting-started" class="px-btn px-btn-primary">Get Started</a>
+                <a href="/docs" target="_blank" class="px-btn px-btn-primary">View Documentation</a>
+            </div>
+            <div class="px-version">
+                <span class="px-version-badge">Version 1.0.0</span>
+                <span class="px-platform-badge">Release Date: September 1, 2025</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Complete Framework Components Section -->
+<section class="px-features">
+    <div class="px-container">
+        <h2 class="px-section-title">Complete Framework Components by Namespace</h2>
+        <p class="px-components-intro">
+            Primordyx is organized into logical namespaces, each containing specialized components
+            for different aspects of web application development. This structure provides clarity
+            and makes the framework easy to navigate and understand.
+        </p>
+
+        <!-- CLI Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">⚡ CLI</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>Primordyx CLI</h4>
+                    <p>Complete command-line interface with executable binary for all framework operations.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Migration System</h4>
+                    <p>Advanced database migration system with 50+ templates for every database operation.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Code Generators</h4>
+                    <p>Automated code generation for migrations, models, and application scaffolding.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Doctor Command</h4>
+                    <p>System health checker to validate framework setup and dependencies.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Make Command</h4>
+                    <p>Powerful make commands for generating boilerplate code and project structure.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Seed System</h4>
+                    <p>Database seeding system for test data and initial application setup.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Config Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">⚙️ Config</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>AppAutoLoader</h4>
+                    <p>PSR-4 compliant autoloading with O(1) class resolution and flexible directory mapping.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>PrimordyxInfo</h4>
+                    <p>Framework version information and metadata utilities for system identification.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Config</h4>
+                    <p>Centralized configuration management with environment support and validation.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Ini</h4>
+                    <p>Advanced INI file processing and configuration parsing utilities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">📦 Data</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>Bundle</h4>
+                    <p>Application configuration and bundle management system for modular applications.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Cargo & CargoInspector</h4>
+                    <p>Data transport and inspection system for complex data operations.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>DataSaver</h4>
+                    <p>Flexible data persistence system with multiple format support and configuration.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Safe</h4>
+                    <p>Tamper-resistant session management with cryptographic security and database persistence.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Validator</h4>
+                    <p>Comprehensive input validation and sanitization for secure data processing.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">🗄️ Database</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>Model</h4>
+                    <p>Base database model with ORM-style functionality and relationship support.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>QueryBuilder</h4>
+                    <p>Fluent SQL query builder with security and performance optimization.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>ConnectionManager</h4>
+                    <p>Database connection pooling and management system for multiple databases.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Paginator</h4>
+                    <p>Efficient database pagination with performance optimization and large dataset support.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>QueryTracker</h4>
+                    <p>Database query monitoring and performance analysis tools.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>SqlProcessor</h4>
+                    <p>Advanced SQL processing and query optimization tools for complex operations.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>SafeModel</h4>
+                    <p>Database model for secure session storage with expiration and soft delete support.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>DatabaseSafePersistence</h4>
+                    <p>Database persistence implementation for the Safe session management system.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">🔄 Events</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>EventManager</h4>
+                    <p>Event-driven architecture with filters, actions, and priority-based execution.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>MessageQueue</h4>
+                    <p>Enterprise message queue system for asynchronous processing and job management.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Geo Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">🌍 Geo</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>Gps</h4>
+                    <p>GPS and location-based service utilities for geographic applications.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>State</h4>
+                    <p>US state management and geographic state-based operations.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>StateInfo</h4>
+                    <p>Comprehensive state information and geographic metadata utilities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Http Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">🌐 Http</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>HttpClient</h4>
+                    <p>Full-featured HTTP client with cURL backend and authentication support.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>HttpClientConfig</h4>
+                    <p>Configuration system for HTTP client requests and authentication.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>HttpResult</h4>
+                    <p>HTTP response handling and result processing utilities.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>HttpStatus</h4>
+                    <p>HTTP status code utilities and response management.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Cookie</h4>
+                    <p>Secure cookie management with SameSite and security options.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>PageThrottle</h4>
+                    <p>Rate limiting and traffic control for web application protection.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mail Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">📧 Mail</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>MailgunMailer</h4>
+                    <p>Email integration with Mailgun API support for transactional emails.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Routing Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">🛣️ Routing</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>Router</h4>
+                    <p>Lightweight routing for CLI and HTTP requests with middleware support.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Params</h4>
+                    <p>RESTful request parameter handling with comprehensive security validation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">🔐 Security</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>AuthManager</h4>
+                    <p>Comprehensive authentication with role-based access control and brute force protection.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>BotDetector</h4>
+                    <p>Multi-layered bot detection through user agent analysis and behavioral indicators.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Crypto</h4>
+                    <p>Cryptographic utilities for secure data handling and encryption operations.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>SessionSecurity</h4>
+                    <p>Advanced session security with attack prevention mechanisms and hardening.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Token</h4>
+                    <p>Secure token generation and validation for API authentication and authorization.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">🔧 System</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>BulkLoad</h4>
+                    <p>Bulk file loading utilities with recursive directory scanning capabilities.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Cron</h4>
+                    <p>Task scheduling and background job management with cron-style timing.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Log</h4>
+                    <p>Comprehensive logging system with multiple levels and file rotation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Time Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">⏰ Time</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>Timer</h4>
+                    <p>Precision performance monitoring with named timers and lap timing capabilities.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>TimeHelper</h4>
+                    <p>Time formatting and manipulation utilities for datetime operations.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Utils Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">🛠️ Utils</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>BlackHorse</h4>
+                    <p>Advanced framework component for specialized processing operations.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Callback</h4>
+                    <p>Callback function utilities and management system for event handling.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Conversions</h4>
+                    <p>Data type conversion and formatting utilities for seamless data transformation.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>DebugHelper</h4>
+                    <p>Advanced debugging utilities and development tools for troubleshooting.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>ImageHelper</h4>
+                    <p>Image processing and manipulation utilities for media handling.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Lists</h4>
+                    <p>Advanced list processing and manipulation functions for array operations.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>RandomStuff</h4>
+                    <p>Specialized utilities and helper functions for unique use cases.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Strings</h4>
+                    <p>Comprehensive string manipulation and processing utilities for text operations.</p>
+                </div>
+                <div class="px-feature-card">
+                    <h4>Utils</h4>
+                    <p>General purpose utilities for common development tasks and operations.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Namespace -->
+        <div class="px-component-category">
+            <h3 class="px-category-title">📄 View</h3>
+            <div class="px-features-grid">
+                <div class="px-feature-card">
+                    <h4>View</h4>
+                    <p>Template engine with layout inheritance and custom filters for presentation.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Why Primordyx Section -->
+<section class="px-benefits">
+    <div class="px-container">
+        <h2 class="px-section-title">Why Choose Primordyx</h2>
+        <div class="px-benefits-content">
+            <div class="px-benefit-group">
+                <h3>Complete Enterprise Solution</h3>
+                <ul>
+                    <li>50+ specialized components covering all aspects of web development</li>
+                    <li>Complete CLI tooling with executable binary and 8 built-in commands</li>
+                    <li>Advanced migration system with 50+ database operation templates</li>
+                    <li>Enterprise message queue system for scalable applications</li>
+                    <li>Integrated security, database, HTTP, and utility systems</li>
+                    <li>Event-driven architecture for maximum extensibility</li>
+                </ul>
+            </div>
+
+            <div class="px-benefit-group">
+                <h3>Developer Experience</h3>
+                <ul>
+                    <li>Professional CLI commands (make, migrate, seed, doctor)</li>
+                    <li>Code generators for rapid application scaffolding</li>
+                    <li>PSR-4 compliant with clean, organized architecture</li>
+                    <li>Modular design - use only what you need</li>
+                    <li>Comprehensive logging and debugging tools</li>
+                    <li>Built-in performance monitoring and profiling</li>
+                    <li>Zero configuration setup with sensible defaults</li>
+                </ul>
+            </div>
+
+            <div class="px-benefit-group">
+                <h3>Production Ready</h3>
+                <ul>
+                    <li>Battle-tested components for high-traffic applications</li>
+                    <li>Advanced database query builder and ORM</li>
+                    <li>HTTP client with full cURL feature support</li>
+                    <li>Secure session storage with multiple persistence options</li>
+                    <li>Built-in rate limiting and traffic throttling</li>
+                    <li>Comprehensive data validation and sanitization</li>
+                    <li>Email integration and notification systems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Getting Started Section -->
+<section id="getting-started" class="px-getting-started">
+    <div class="px-container">
+        <h2 class="px-section-title">Getting Started</h2>
+
+        <div class="px-getting-started-intro">
+            <p>Get up and running with Primordyx in seconds using Composer.</p>
+        </div>
+
+        <div class="px-installation">
+            <div class="px-install-step">
+                <h3>Installation</h3>
+                <p>Add Primordyx to your project:</p>
+                <code class="px-code-block">composer require vernsix/primordyx</code>
+            </div>
+        </div>
+
+        <div class="px-cta">
+            <p>Ready to start building?</p>
+            <div class="px-cta-buttons">
+                <a href="/docs" target="_blank" class="px-btn px-btn-primary">Explore Documentation</a>
+                <a href="https://github.com/vernsix/primordyx" class="px-btn px-btn-primary" target="_blank" rel="noopener">View Source Code</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="px-footer">
+    <div class="px-container">
+        <div class="px-footer-content">
+            <div class="px-footer-info">
+                <img src="primordyx-logo.png" alt="Primordyx" class="px-footer-logo">
+                <p>Modern PHP framework for secure, scalable applications</p>
+            </div>
+            <div class="px-footer-contact" id="contact">
+                <div class="px-contact-header">
+                    <img src="vern-six-photo.jpg" alt="Vern Six" class="px-contact-photo">
+                    <h4>Contact the Author</h4>
+                </div>
+                <div class="px-contact-links">
+                    <a href="mailto:vernsix@gmail.com" class="px-contact-link">
+                        <span class="px-contact-icon">📧</span>
+                        vernsix@gmail.com
+                    </a>
+                    <a href="https://linkedin.com/in/vernsix" target="_blank" rel="noopener" class="px-contact-link">
+                        <span class="px-contact-icon">💼</span>
+                        LinkedIn Profile
+                    </a>
+                    <a href="https://vernsix.com" target="_blank" rel="noopener" class="px-contact-link">
+                        <span class="px-contact-icon">🌐</span>
+                        vernsix.com
+                    </a>
+                </div>
+            </div>
+            <div class="px-footer-links">
+                <a href="/docs" target="_blank">Documentation</a>
+                <a href="https://github.com/vernsix/primordyx" target="_blank" rel="noopener">Source Code</a>
+            </div>
+        </div>
+        <div class="px-footer-bottom">
+            <p>&copy; 2025 Vern Six. Licensed under <a href="https://choosealicense.com/licenses/mit/" target="_blank" rel="noopener">MIT License</a>.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

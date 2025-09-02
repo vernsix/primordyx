@@ -1,0 +1,11 @@
+-- =============================================================================
+-- purge_data_down.sql
+-- =============================================================================
+-- Migration: {{MIGRATION_NAME}}
+-- Type: {{MIGRATION_TYPE}}
+-- Generated: {{TIMESTAMP}}
+-- Rollback: Restore purged data to {{TABLE_NAME}}
+
+-- WARNING: Data cannot be recovered after deletion
+-- You must restore from backup or have the data in another table
+-- Consider creating a backup before purging

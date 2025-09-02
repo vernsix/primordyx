@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<ruleset name="Primordyx Coding Standard">
+
+    <!-- Project Description -->
+    <description>PHP CodeSniffer configuration for Primordyx framework projects</description>
+
+    <!-- Default file extensions to check -->
+    <arg name="extensions" value="php,phtml"/>
+
+    <!-- Show progress and use colors -->
+    <arg name="colors"/>
+    <arg name="progress"/>
+    <arg value="p"/>
+
+    <!-- Parallel processing for faster checking -->
+    <arg name="parallel" value="8"/>
+
+    <file>.</file>
+
+    <exclude-pattern>*/website/*</exclude-pattern>
+    <exclude-pattern>*/demos/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/cache/*</exclude-pattern>
+    <exclude-pattern>*/tmp/*</exclude-pattern>
+    <exclude-pattern>*/temp/*</exclude-pattern>
+    <exclude-pattern>*/logs/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/uploads/*</exclude-pattern>
+    <exclude-pattern>*/.git/*</exclude-pattern>
+    <exclude-pattern>*/tests/fixtures/*</exclude-pattern>
+
+    <!-- Include PSR-12 Extended Coding Style -->
+    <rule ref="PSR12">
+        <!-- Allow longer lines for readability in some cases -->
+        <exclude name="Generic.Files.LineLength"/>
+    </rule>
+
+    <!-- PSR-1 Basic Coding Standard -->
+    <rule ref="PSR1"/>
+
+    <!-- CRITICAL: Check for BOM characters -->
+    <rule ref="Generic.Files.ByteOrderMark"/>
+
+    <!-- Additional useful rules -->
+
+    <!-- File and class naming -->
+    <rule ref="Generic.Files.OneObjectStructurePerFile"/>
+    <rule ref="PSR1.Classes.ClassDeclaration"/>
+
+    <!-- PHP Tags -->
+    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+    <rule ref="Generic.PHP.DisallowAlternativePHPTags"/>
+
+    <!-- Whitespace and formatting -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="indent" value="4"/>
+            <property name="tabIndent" value="false"/>
+        </properties>
+    </rule>
+
+    <!-- Function declarations -->
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+    <rule ref="PSR2.Methods.FunctionClosingBrace"/>
+
+    <!-- Control structures -->
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+    <rule ref="PSR2.ControlStructures.ControlStructureSpacing"/>
+    <rule ref="PSR2.ControlStructures.ElseIfDeclaration"/>
+
+    <!-- Arrays -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+    <!-- Constants -->
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+    <!-- Comments -->
+    <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+    <rule ref="Generic.Commenting.DocComment">
+        <!-- Don't require @param for obvious parameters -->
+        <exclude name="Generic.Commenting.DocComment.MissingShort"/>
+        <exclude name="Generic.Commenting.DocComment.SpacingBeforeTags"/>
+    </rule>
+
+    <!-- PHP specific -->
+    <rule ref="Generic.PHP.LowerCaseKeyword"/>
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+    <rule ref="Generic.PHP.LowerCaseType"/>
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+
+    <!-- Security -->
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array">
+                <element key="eval" value="null"/>
+                <element key="create_function" value="null"/>
+                <element key="var_dump" value="null"/>
+                <element key="print_r" value="null"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Code analysis -->
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+    <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+
+    <!-- Custom line length for your project (optional) -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="150"/>
+        </properties>
+    </rule>
+
+</ruleset>

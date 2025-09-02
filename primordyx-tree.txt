@@ -1,0 +1,201 @@
+.
+|-- bin
+|   `-- primordyx
+|-- CLI
+|   |-- AbstractCommand.php
+|   |-- CommandInterface.php
+|   |-- CommandRegistry.php
+|   |-- Commands
+|   |   |-- DoctorCommand.php
+|   |   |-- HelpCommand.php
+|   |   |-- MakeCommand.php
+|   |   |-- MessageQueueConsumeCommand.php
+|   |   |-- MessageQueuePublishCommand.php
+|   |   |-- MigrateCommand.php
+|   |   |-- SeedCommand.php
+|   |   `-- VersionCommand.php
+|   |-- Generators
+|   |   `-- MigrationGenerator.php
+|   |-- Migration
+|   |   `-- MigrationRunner.php
+|   |-- Output.php
+|   `-- Templates
+|       `-- Migrations
+|           |-- add_check_constraint_down.sql
+|           |-- add_check_constraint_up.sql
+|           |-- add_column_down.sql
+|           |-- add_column_up.sql
+|           |-- add_foreign_key_down.sql
+|           |-- add_foreign_key_up.sql
+|           |-- add_fulltext_index_down.sql
+|           |-- add_fulltext_index_up.sql
+|           |-- add_generated_column_down.sql
+|           |-- add_generated_column_up.sql
+|           |-- add_index_down.sql
+|           |-- add_index_up.sql
+|           |-- add_spatial_index_down.sql
+|           |-- add_spatial_index_up.sql
+|           |-- add_unique_down.sql
+|           |-- add_unique_up.sql
+|           |-- add_user_down.sql
+|           |-- add_user_up.sql
+|           |-- analyze_table_down.sql
+|           |-- analyze_table_up.sql
+|           |-- archive_data_down.sql
+|           |-- archive_data_up.sql
+|           |-- backup_table_down.sql
+|           |-- backup_table_up.sql
+|           |-- blank_down.sql
+|           |-- blank_up.sql
+|           |-- change_engine_down.sql
+|           |-- change_engine_up.sql
+|           |-- convert_charset_down.sql
+|           |-- convert_charset_up.sql
+|           |-- copy_table_down.sql
+|           |-- copy_table_up.sql
+|           |-- create_database_down.sql
+|           |-- create_database_up.sql
+|           |-- create_function_down.sql
+|           |-- create_function_up.sql
+|           |-- create_procedure_down.sql
+|           |-- create_procedure_up.sql
+|           |-- create_role_down.sql
+|           |-- create_role_up.sql
+|           |-- create_table_down.sql
+|           |-- create_table_up.sql
+|           |-- create_trigger_down.sql
+|           |-- create_trigger_up.sql
+|           |-- create_view_down.sql
+|           |-- create_view_up.sql
+|           |-- drop_column_down.sql
+|           |-- drop_column_up.sql
+|           |-- drop_constraint_down.sql
+|           |-- drop_constraint_up.sql
+|           |-- drop_database_down.sql
+|           |-- drop_database_up.sql
+|           |-- drop_function_down.sql
+|           |-- drop_function_up.sql
+|           |-- drop_index_down.sql
+|           |-- drop_index_up.sql
+|           |-- drop_procedure_down.sql
+|           |-- drop_procedure_up.sql
+|           |-- drop_role_down.sql
+|           |-- drop_role_up.sql
+|           |-- drop_table_down.sql
+|           |-- drop_table_up.sql
+|           |-- drop_trigger_down.sql
+|           |-- drop_trigger_up.sql
+|           |-- grant_privileges_down.sql
+|           |-- grant_privileges_up.sql
+|           |-- migrate_data_down.sql
+|           |-- migrate_data_up.sql
+|           |-- modify_column_down.sql
+|           |-- modify_column_up.sql
+|           |-- modify_table_options_down.sql
+|           |-- modify_table_options_up.sql
+|           |-- move_column_down.sql
+|           |-- move_column_up.sql
+|           |-- partition_table_down.sql
+|           |-- partition_table_up.sql
+|           |-- purge_data_down.sql
+|           |-- purge_data_up.sql
+|           |-- README.md
+|           |-- rename_column_down.sql
+|           |-- rename_column_up.sql
+|           |-- rename_table_down.sql
+|           |-- rename_table_up.sql
+|           |-- revoke_privileges_down.sql
+|           |-- revoke_privileges_up.sql
+|           |-- seed_table_down.sql
+|           |-- seed_table_up.sql
+|           |-- templates.sql
+|           |-- transfer_data_down.sql
+|           |-- transfer_data_up.sql
+|           |-- truncate_table_down.sql
+|           `-- truncate_table_up.sql
+|-- composer.json
+|-- config.ini.example
+|-- demos
+|   |-- EventManager
+|   |   `-- EventManagerDemo.php
+|   `-- Safe
+|       `-- SafeDemoController.php
+|-- FAQS.md
+|-- INSTALL.md
+|-- phpcs.xml
+|-- phpdoc.xml
+|-- primordyx_blocks_1.png
+|-- primordyx-tree.txt
+|-- README.md
+`-- src
+    |-- AppAutoLoader.php
+    |-- CHANGELOG.md
+    |-- Config
+    |   |-- Config.php
+    |   `-- Ini.php
+    |-- Data
+    |   |-- Bundle.php
+    |   |-- CargoInspector.php
+    |   |-- Cargo.php
+    |   |-- DataSaverConfig.php
+    |   |-- DataSaver.php
+    |   |-- DataSaverTypeRegistry.php
+    |   |-- Safe.php
+    |   `-- Validator.php
+    |-- Database
+    |   |-- ConnectionManager.php
+    |   |-- DatabaseSafePersistence.php
+    |   |-- Model.php
+    |   |-- Paginator.php
+    |   |-- QueryBuilder.php
+    |   |-- QueryTracker.php
+    |   |-- SafeModel.php
+    |   |-- SafePersistenceInterface.php
+    |   `-- SqlProcessor.php
+    |-- Events
+    |   |-- EventManager.php
+    |   `-- MessageQueue.php
+    |-- Geo
+    |   |-- Gps.php
+    |   |-- StateInfo.php
+    |   `-- State.php
+    |-- Http
+    |   |-- Cookie.php
+    |   |-- HttpClientConfig.php
+    |   |-- HttpClient.php
+    |   |-- HttpResult.php
+    |   |-- HttpStatus.php
+    |   `-- PageThrottle.php
+    |-- Mail
+    |   `-- MailgunMailer.php
+    |-- PrimordyxInfo.php
+    |-- Routing
+    |   |-- Params.php
+    |   `-- Router.php
+    |-- Security
+    |   |-- AuthManager.php
+    |   |-- BotDetector.php
+    |   |-- Crypto.php
+    |   |-- SessionSecurity.php
+    |   `-- Token.php
+    |-- System
+    |   |-- BulkLoad.php
+    |   |-- Cron.php
+    |   `-- Log.php
+    |-- Time
+    |   |-- TimeHelper.php
+    |   `-- Timer.php
+    |-- Utils
+    |   |-- BlackHorse.php
+    |   |-- Callback.php
+    |   |-- Conversions.php
+    |   |-- DebugHelper.php
+    |   |-- ImageHelper.php
+    |   |-- Lists.php
+    |   |-- RandomStuff.php
+    |   |-- Strings.php
+    |   `-- Utils.php
+    `-- View
+        `-- View.php
+
+25 directories, 174 files

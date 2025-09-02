@@ -1,0 +1,39 @@
+{
+  "name": "vernsix/primordyx",
+  "description": "A lightweight PHP framework for modern web apps.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vern Six",
+      "email": "you@example.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "ext-pdo": "*",
+    "ext-openssl": "*",
+    "ext-curl": "*",
+    "ext-gd": "*",
+    "ext-fileinfo": "*",
+    "ext-mbstring": "*",
+    "ext-iconv": "*",
+    "ext-ctype": "*",
+    "ext-libxml": "*",
+    "ext-dom": "*",
+    "ext-simplexml": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Primordyx\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/primordyx"
+  ],
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}

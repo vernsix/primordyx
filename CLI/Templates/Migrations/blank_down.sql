@@ -1,0 +1,12 @@
+-- =============================================================================
+-- blank_down.sql
+-- =============================================================================
+-- Migration: {{MIGRATION_NAME}}
+-- Type: {{MIGRATION_TYPE}}
+-- Generated: {{TIMESTAMP}}
+-- Rollback: Custom rollback - add your SQL here
+
+-- Add your custom rollback SQL statements here
+-- Example:
+-- DROP TABLE IF EXISTS example;
+-- DELETE FROM settings WHERE key = 'version';

@@ -1,0 +1,11 @@
+-- =============================================================================
+-- truncate_table_down.sql
+-- =============================================================================
+-- Migration: {{MIGRATION_NAME}}
+-- Type: {{MIGRATION_TYPE}}
+-- Generated: {{TIMESTAMP}}
+-- Rollback: Restore data to {{TABLE_NAME}}
+
+-- WARNING: Data cannot be recovered after truncate
+-- You must restore from backup or repopulate manually
+-- Consider using DELETE instead of TRUNCATE for recoverable operations

@@ -1,0 +1,228 @@
+#!/usr/bin/env php
+<?php
+/**
+ * File: /vendor/vernsix/primordyx/bin/primordyx
+ *
+ * @package     Primordyx
+ * @author      Vern Six vernsix@gmail.com
+ * @copyright   Copyright (c) 2025
+ * @license     MIT License
+ * @since       1.0.0
+ * @version     1.0.0
+ * @link        https://bitbucket.org/vernsix/primordyx/bin/primordyx
+ *
+ */
+
+declare(strict_types=1);
+
+namespace PrimordyxCLI;
+
+use Exception;
+use FilesystemIterator;
+use PDO;
+use Primordyx\Config\Config;
+use Primordyx\Database\ConnectionManager;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+
+// Simple error handling
+function cli_error(string $message): never {
+    fwrite(STDERR, "\nError: " . $message . "\n");
+    exit(1);
+}
+
+// Check if we're in a valid Primordyx project root
+$currentDir = getcwd();
+if (!is_dir($currentDir . '/config') || !file_exists($currentDir . '/vendor/autoload.php')) {
+    cli_error(
+        "This command must be run from the project root directory.\n" .
+        "A valid project root must contain:\n" .
+        "  - config/ directory\n" .
+        "  - vendor/autoload.php\n\n" .
+        "Current directory: {$currentDir}"
+    );
+}
+
+// Define APP_ROOT constant
+define('APP_ROOT', $currentDir);
+
+// Load Composer autoloader from current project
+require_once APP_ROOT . '/vendor/autoload.php';
+
+// Set up paths for CLI classes (from current project)
+$cliPath = APP_ROOT . '/vendor/vernsix/primordyx/CLI';
+
+if (!is_dir($cliPath)) {
+    cli_error("Primordyx CLI directory not found: {$cliPath}");
+}
+
+// Autoloader for CLI classes
+spl_autoload_register(function ($class) use ($cliPath) {
+    // Handle PrimordyxCLI namespace
+    if (!str_starts_with($class, 'PrimordyxCLI\\')) {
+        return;
+    }
+
+    // Remove namespace prefix
+    $className = substr($class, 12); // Remove 'PrimordyxCLI\'
+
+    // Direct file in CLI root (e.g., Output, CommandRegistry, AbstractCommand)
+    $file = $cliPath . '/' . $className . '.php';
+    if (file_exists($file)) {
+        require_once $file;
+        return;
+    }
+
+    // Check in Commands subdirectory (e.g., HelpCommand, MigrateCommand)
+    $file = $cliPath . '/Commands/' . $className . '.php';
+    if (file_exists($file)) {
+        require_once $file;
+        return;
+    }
+
+    // Future-proof: recursively search for class files in subdirectories
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($cliPath, FilesystemIterator::SKIP_DOTS),
+        RecursiveIteratorIterator::SELF_FIRST
+    );
+
+    foreach ($iterator as $file) {
+        if ($file->isFile() && $file->getExtension() === 'php') {
+            $filename = $file->getBasename('.php');
+            if ($filename === $className) {
+                require_once $file->getPathname();
+                return;
+            }
+        }
+    }
+});
+
+// Get command line arguments
+$args = $argv;
+array_shift($args); // Remove script name
+
+// Check if no args or --help at top level
+if (empty($args) || in_array('--help', $args) || in_array('-h', $args)) {
+    $args = ['help', '--all'];
+}
+
+// TENANT DETECTION
+// ================
+$tenant = null;
+
+// Check for explicit --tenant parameter
+foreach ($args as $arg) {
+    if (str_starts_with($arg, '--tenant=')) {
+        $tenant = substr($arg, 9);
+        break;
+    }
+}
+
+if (!$tenant) {
+    // Auto-detect from config files
+    $configFiles = glob(APP_ROOT . '/config/*.ini');
+
+    // Filter out .local.ini files from count
+    $productionConfigs = array_filter($configFiles,
+        fn($f) => !str_ends_with($f, '.local.ini')
+    );
+
+    if (count($productionConfigs) === 1) {
+        // Single tenant - use it automatically
+        $tenant = basename($productionConfigs[0], '.ini');
+    } elseif (count($productionConfigs) > 1) {
+        // Multi-tenant - show error with options
+        cli_error(
+            "Multiple tenants detected. Please specify which one:\n" .
+            "  primordyx [command] --tenant=NAME\n\n" .
+            "Available tenants:\n" .
+            implode("\n", array_map(
+                fn($f) => "  - " . basename($f, '.ini'),
+                $productionConfigs
+            ))
+        );
+    } else {
+        cli_error("No configuration files found in " . APP_ROOT . "/config/");
+    }
+}
+
+// Define tenant constant
+define('APP_TENANT', $tenant);
+define('APP_STORAGE_PATH', APP_ROOT . '/storage');
+
+// LOAD CONFIGURATION
+// ==================
+$localConfig = APP_ROOT . '/config/' . APP_TENANT . '.local.ini';
+$prodConfig = APP_ROOT . '/config/' . APP_TENANT . '.ini';
+$configFile = file_exists($localConfig) ? $localConfig : $prodConfig;
+
+if (!file_exists($configFile)) {
+    cli_error("Configuration file not found: {$configFile}");
+}
+
+Config::initialize($configFile, 'app');
+
+// Set timezone from configuration
+date_default_timezone_set(Config::get('timezone', 'app', 'America/Chicago'));
+
+// Configure error logging if enabled
+if (Config::getBool('enabled', 'error_logging')) {
+    $filename = Config::get('filename', 'error_logging');
+    ini_set('log_errors', '1');
+    ini_set('error_log', $filename);
+}
+
+// REGISTER DATABASE CONNECTIONS
+// =============================
+$allSections = Config::dump();
+
+foreach ($allSections as $section => $config) {
+    if (str_starts_with($section, 'database_')) {
+        // Skip explicitly disabled connections
+        if (isset($config['enabled']) && $config['enabled'] === 'false') {
+            continue;
+        }
+
+        // Build PDO DSN from configuration
+        $dsn = sprintf(
+            '%s:host=%s;port=%s;dbname=%s;charset=%s',
+            $config['driver'] ?? 'mysql',
+            $config['host'] ?? 'localhost',
+            $config['port'] ?? '3306',
+            $config['database'],
+            $config['charset'] ?? 'utf8mb4'
+        );
+
+        // Build PDO options array
+        $options = [];
+        if (isset($config['timeout'])) {
+            $options[PDO::ATTR_TIMEOUT] = (int)$config['timeout'];
+        }
+        if (isset($config['persistent']) && $config['persistent'] === 'true') {
+            $options[PDO::ATTR_PERSISTENT] = true;
+        }
+        $options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+
+        // Extract handle name from section name
+        $handle = substr($section, 9); // Remove 'database_' prefix
+
+        // Register for lazy loading
+        ConnectionManager::registerConfig(
+            $handle,
+            $dsn,
+            $config['username'],
+            $config['password'],
+            $options
+        );
+    }
+}
+
+// INITIALIZE AND RUN COMMAND
+// ==========================
+$registry = new CommandRegistry();
+
+try {
+    $registry->run($args);
+} catch (Exception $e) {
+    cli_error($e->getMessage());
+}
