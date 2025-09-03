@@ -87,7 +87,7 @@ class Config
      * @return mixed The configuration value
      * @throws RuntimeException if configuration is not initialized
      */
-    public static function get(string $key, string $section = '', mixed $default = null): mixed
+    public static function get(string $key, string $section = '', mixed $default = 'undefined'): mixed
     {
         self::ensureInitialized();
         return self::$config->get($key, $section, $default);

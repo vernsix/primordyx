@@ -32,6 +32,6 @@ class PrimordyxInfo
      */
     public static function version(): string
     {
-        return '1.0.0';
+        return '1.0.3';
     }
 }
