@@ -236,7 +236,7 @@ Notes:
         $databaseName = $options['database'] ?? 'default';
 
         try {
-            if (!class_exists('MigrationRunner')) {
+            if (!class_exists('PrimordyxCLI\MigrationRunner')) {
                 $this->error("MigrationRunner class not found. Please ensure CLI/MigrationRunner.php exists.");
             }
 

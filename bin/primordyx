@@ -64,23 +64,9 @@ spl_autoload_register(function ($class) use ($cliPath) {
     }
 
     // Remove namespace prefix
-    $className = substr($class, 12); // Remove 'PrimordyxCLI\'
+    $className = substr($class, strlen('PrimordyxCLI\\'));
 
-    // Direct file in CLI root (e.g., Output, CommandRegistry, AbstractCommand)
-    $file = $cliPath . '/' . $className . '.php';
-    if (file_exists($file)) {
-        require_once $file;
-        return;
-    }
-
-    // Check in Commands subdirectory (e.g., HelpCommand, MigrateCommand)
-    $file = $cliPath . '/Commands/' . $className . '.php';
-    if (file_exists($file)) {
-        require_once $file;
-        return;
-    }
-
-    // Future-proof: recursively search for class files in subdirectories
+    // Use iterator to search all subdirectories
     $iterator = new RecursiveIteratorIterator(
         new RecursiveDirectoryIterator($cliPath, FilesystemIterator::SKIP_DOTS),
         RecursiveIteratorIterator::SELF_FIRST

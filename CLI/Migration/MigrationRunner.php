@@ -52,6 +52,7 @@ use Throwable;
 class MigrationRunner
 {
     protected PDO $db;
+    protected string $configSectionName = '';
     protected SqlProcessor $sqlProcessor;
     protected string $databaseName;
     protected ?string $migrationsPath = null;
@@ -63,20 +64,28 @@ class MigrationRunner
      * MigrationRunner constructor.
      *
      * @param string $migrationsPath  Absolute path to migrations directory.
-     * @param string $databaseName    Target database name (actual database, not connection name).
+     * @param string $configSectionName Config section name (e.g., 'default' for 'database_default').  // CHANGE THIS LINE
      *
      * @throws RuntimeException If connection cannot be established
      * @throws RuntimeException If migrations tracking file cannot be created
      * @throws InvalidArgumentException If databaseName is empty or invalid
      * @throws RuntimeException If migrationsPath does not exist or is not readable
      */
-    public function __construct(string $migrationsPath, string $databaseName)
+    public function __construct(string $migrationsPath, string $configSectionName)
     {
-        if (trim($databaseName) === '') {
-            throw new InvalidArgumentException('Database name cannot be empty');
+        if (trim($configSectionName) === '') {
+            throw new InvalidArgumentException('Config section name cannot be empty');
         }
 
-        $this->databaseName = $databaseName;
+        $this->configSectionName = $configSectionName;
+
+        // Read the ACTUAL database name from config
+        $section = 'database_' . $configSectionName;
+        $this->databaseName = Config::get('database', $section);
+
+        if ($this->databaseName === 'undefined') {
+            throw new RuntimeException("Database name not found in section [{$section}]");
+        }
 
         // Try target database first, fall back to system connection
         $this->establishConnection();
@@ -89,6 +98,33 @@ class MigrationRunner
 
         $this->ensureMigrationsFile();
     }
+
+    /**
+     * Ensure target database exists when using system connection
+     */
+    protected function ensureTargetDatabase(): void
+    {
+        if (!$this->usingSystemConnection) {
+            return; // Already connected to target database
+        }
+
+        try {
+            // Create the database if it doesn't exist
+            $createDbSql = "CREATE DATABASE IF NOT EXISTS `{$this->databaseName}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci";
+            $this->db->exec($createDbSql);
+
+            // Switch to the target database
+            $this->db->exec("USE `{$this->databaseName}`");
+
+            if (!$this->dryRun) {
+                echo "✅ Created and switched to database: {$this->databaseName}\n";
+            }
+
+        } catch (Throwable $e) {
+            throw new RuntimeException("Failed to create/select target database '{$this->databaseName}': " . $e->getMessage());
+        }
+    }
+
 
     /**
      * Establish database connection, trying target database first, then system
@@ -166,7 +202,7 @@ class MigrationRunner
      */
     private function createTargetDatabaseConnection(): PDO
     {
-        $section = 'database_' . $this->databaseName;
+        $section = 'database_' . $this->configSectionName;
 
         $driver = Config::get('driver', $section);
         $host = Config::get('host', $section);
@@ -480,6 +516,8 @@ class MigrationRunner
      */
     public function runPending(): int
     {
+        $this->ensureTargetDatabase();
+
         $pending = $this->tempPendingMigrations ?? $this->getPendingMigrations();
         if (empty($pending)) {
             echo "No pending migrations to run.\n";
