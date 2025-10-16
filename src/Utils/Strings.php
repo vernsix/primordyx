@@ -13,6 +13,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Primordyx\Utils;
 
 use DateTimeImmutable;
@@ -224,7 +225,7 @@ class Strings
      * It uses `strncmp()` to compare the start of `$haystack` with `$needle` up to the length of `$needle`.
      *
      * @param string $haystack The full string to evaluate.
-     * @param string $needle   The substring to check for at the start of `$haystack`.
+     * @param string $needle The substring to check for at the start of `$haystack`.
      *
      * @return bool Returns `true` if `$haystack` starts with `$needle`, otherwise `false`.
      *
@@ -253,7 +254,7 @@ class Strings
      * It compares the ending segment of `$haystack` (based on the length of `$needle`) to `$needle` itself.
      *
      * @param string $haystack The full string to evaluate.
-     * @param string $needle   The substring to check for at the end of `$haystack`.
+     * @param string $needle The substring to check for at the end of `$haystack`.
      *
      * @return bool Returns `true` if `$haystack` ends with `$needle`, or if `$needle` is an empty string; otherwise, `false`.
      *
@@ -284,7 +285,7 @@ class Strings
      * `false` if the substring is not found.
      *
      * @param string $haystack The string to search within.
-     * @param string $needle   The substring to search for.
+     * @param string $needle The substring to search for.
      *
      * @return bool Returns `true` if `$needle` exists within `$haystack`, otherwise `false`.
      *
@@ -313,8 +314,8 @@ class Strings
      * including space for the `$ellipsis` if the original string exceeds that length.
      * If the string is already within the limit, it is returned unchanged.
      *
-     * @param string $string   The input string to truncate.
-     * @param int    $length   The maximum length of the returned string, including the ellipsis.
+     * @param string $string The input string to truncate.
+     * @param int $length The maximum length of the returned string, including the ellipsis.
      *                         Must be at least as long as the ellipsis itself.
      * @param string $ellipsis The string to append to the end of truncated text. Defaults to a single Unicode ellipsis character (`…`).
      *
@@ -546,7 +547,7 @@ class Strings
      * so comparison is case-sensitive by default.
      *
      * @param string $haystack The string to evaluate.
-     * @param array  $prefixes An array of prefix strings to test against the start of `$haystack`.
+     * @param array $prefixes An array of prefix strings to test against the start of `$haystack`.
      *
      * @return bool Returns `true` if `$haystack` starts with at least one of the specified prefixes; otherwise `false`.
      *
@@ -581,9 +582,9 @@ class Strings
      * and returns the substring between them. If either delimiter is not found in the proper order,
      * the function returns `null`.
      *
-     * @param string $str   The full input string to search within.
+     * @param string $str The full input string to search within.
      * @param string $start The starting delimiter. The result will begin immediately after this.
-     * @param string $end   The ending delimiter. The result will end just before this.
+     * @param string $end The ending delimiter. The result will end just before this.
      *
      * @return string|null Returns the substring between `$start` and `$end`, or `null` if the delimiters aren't found in order.
      *
@@ -618,9 +619,9 @@ class Strings
      * of the string until the desired length is reached. If the original string is already at or longer
      * than the target length, it is returned unchanged.
      *
-     * @param string $str    The input string to pad.
-     * @param int    $length The total length of the resulting string after padding.
-     * @param string $char   The character to pad with. Must be a non-empty string. Defaults to a space `' '`.
+     * @param string $str The input string to pad.
+     * @param int $length The total length of the resulting string after padding.
+     * @param string $char The character to pad with. Must be a non-empty string. Defaults to a space `' '`.
      *
      * @return string The left-padded string, or the original string if it is already equal to or longer than `$length`.
      *
@@ -649,9 +650,9 @@ class Strings
      * of the string until the desired length is reached. If the original string is already at or longer
      * than the target length, it is returned unchanged.
      *
-     * @param string $str    The input string to pad.
-     * @param int    $length The total desired length of the resulting string after padding.
-     * @param string $char   The character to pad with. Must be a non-empty string. Defaults to a space `' '`.
+     * @param string $str The input string to pad.
+     * @param int $length The total desired length of the resulting string after padding.
+     * @param string $char The character to pad with. Must be a non-empty string. Defaults to a space `' '`.
      *
      * @return string The right-padded string, or the original string if it is already equal to or longer than `$length`.
      *
@@ -679,8 +680,8 @@ class Strings
      * This method uses `str_repeat()` to duplicate the input string `$times` number of times.
      * It returns the concatenated result. If `$times` is 0 or less, an empty string is returned.
      *
-     * @param string $str   The string to repeat.
-     * @param int    $times The number of times to repeat the string. Should be a non-negative integer.
+     * @param string $str The string to repeat.
+     * @param int $times The number of times to repeat the string. Should be a non-negative integer.
      *
      * @return string The repeated string, or an empty string if `$times` is 0 or negative.
      *
@@ -737,9 +738,9 @@ class Strings
      * This method splits the input string into words using whitespace, and returns the first `$maxWords`
      * joined by spaces. If the input has fewer than or equal to `$maxWords`, it is returned unchanged.
      *
-     * @param string $str       The input string to process.
-     * @param int    $maxWords  The maximum number of words to retain.
-     * @param string $ellipsis  The string to append if truncation occurs. Defaults to a Unicode ellipsis (`…`).
+     * @param string $str The input string to process.
+     * @param int $maxWords The maximum number of words to retain.
+     * @param string $ellipsis The string to append if truncation occurs. Defaults to a Unicode ellipsis (`…`).
      *
      * @return string The truncated string if word count exceeds the limit, or the original string otherwise.
      *
@@ -798,7 +799,7 @@ class Strings
      * while optionally preserving a whitelist of specified tags. Useful when sanitizing user input
      * while still permitting basic formatting (e.g., `<b>`, `<i>`, `<br>`).
      *
-     * @param string $str         The input string potentially containing HTML.
+     * @param string $str The input string potentially containing HTML.
      * @param string $allowedTags A string of allowed tags in angle brackets (e.g., `'<b><i><br>'`).
      *                            Tags must be lowercase and well-formed to be preserved.
      *
@@ -1003,8 +1004,8 @@ class Strings
      * This method uses `str_replace()` to remove every instance of each character (or substring)
      * listed in the `$chars` array from the input string. It is a simple way to filter out unwanted characters.
      *
-     * @param string $str   The input string to clean.
-     * @param array  $chars An array of characters or substrings to remove from the input.
+     * @param string $str The input string to clean.
+     * @param array $chars An array of characters or substrings to remove from the input.
      *
      * @return string The resulting string after all specified characters/substrings are removed.
      *
@@ -1032,7 +1033,7 @@ class Strings
      * This method uses `preg_match()` to test whether the input string matches the specified pattern.
      * It returns `true` if the pattern matches at least once, and `false` otherwise.
      *
-     * @param string $str     The input string to evaluate.
+     * @param string $str The input string to evaluate.
      * @param string $pattern A valid regular expression pattern, including delimiters (e.g., `'/^abc/i'`).
      *
      * @return bool Returns `true` if the pattern matches the string; otherwise `false`.
@@ -1063,9 +1064,9 @@ class Strings
      * then returns a snippet of text surrounding it — with up to `$radius` characters
      * before and after the match — wrapped in ellipses.
      *
-     * @param string $str    The full text to search within.
-     * @param string $query  The substring to find within the text.
-     * @param int    $radius The number of characters to include before and after the match. Defaults to 50.
+     * @param string $str The full text to search within.
+     * @param string $query The substring to find within the text.
+     * @param int $radius The number of characters to include before and after the match. Defaults to 50.
      *
      * @return string A trimmed excerpt centered around the match, wrapped in `...`, or an empty string if no match is found.
      *
@@ -1101,8 +1102,8 @@ class Strings
      * preserving the structure of the HTML while wrapping visible text at the specified width.
      * It avoids breaking tags or inserting line breaks within HTML elements.
      *
-     * @param string $str   The HTML-containing string to wrap.
-     * @param int    $width The maximum line width before inserting a break. Defaults to 75 characters.
+     * @param string $str The HTML-containing string to wrap.
+     * @param int $width The maximum line width before inserting a break. Defaults to 75 characters.
      * @param string $break The string to insert as the break. Defaults to a newline character (`"\n"`).
      *
      * @return string The HTML string with visible text word-wrapped, leaving tags untouched.
@@ -1163,8 +1164,8 @@ class Strings
      * a hyphen followed by the provided `$id`. It is commonly used for creating SEO-friendly URLs
      * that include both readable text and a unique identifier.
      *
-     * @param string     $str The input string to convert into a slug.
-     * @param int|string $id  The identifier to append. Typically a numeric ID, but any scalar value can be used.
+     * @param string $str The input string to convert into a slug.
+     * @param int|string $id The identifier to append. Typically a numeric ID, but any scalar value can be used.
      *
      * @return string The combined slug and ID string, formatted as `slugified-string-id`.
      *
@@ -1191,7 +1192,7 @@ class Strings
      * This method prepends the specified `$prefix` and appends the `$suffix` to the input string.
      * It is useful for surrounding content with quotation marks, brackets, tags, or other markers.
      *
-     * @param string $str    The input string to wrap.
+     * @param string $str The input string to wrap.
      * @param string $prefix The string to prepend.
      * @param string $suffix The string to append.
      *
@@ -1243,7 +1244,7 @@ class Strings
      */
     public static function ordinal(int $number): string
     {
-        $suffix = ['th','st','nd','rd','th','th','th','th','th','th'];
+        $suffix = ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th'];
         if (($number % 100) >= 11 && ($number % 100) <= 13) {
             return $number . 'th';
         }
@@ -1257,9 +1258,9 @@ class Strings
      * it symmetrically (or near-symmetrically if the total padding is odd). Padding is added
      * with the specified character, defaulting to a space.
      *
-     * @param string $str   The input string to center.
-     * @param int    $width The total width of the resulting string, including padding.
-     * @param string $pad   The character used for padding. Must be a non-empty string. Defaults to a space `' '`.
+     * @param string $str The input string to center.
+     * @param int $width The total width of the resulting string, including padding.
+     * @param string $pad The character used for padding. Must be a non-empty string. Defaults to a space `' '`.
      *
      * @return string The centered string, padded to the specified width. If `$width` is less than or equal
      *                to the string's length, the original string is returned unchanged.
@@ -1292,9 +1293,9 @@ class Strings
      * except for the last `$visible` characters. It's commonly used for partially hiding sensitive data
      * like credit card numbers or email usernames.
      *
-     * @param string $str       The input string to mask.
-     * @param int    $visible   The number of characters to leave visible at the end of the string. Defaults to 4.
-     * @param string $maskChar  The character to use for masking. Defaults to `'*'`.
+     * @param string $str The input string to mask.
+     * @param int $visible The number of characters to leave visible at the end of the string. Defaults to 4.
+     * @param string $maskChar The character to use for masking. Defaults to `'*'`.
      *
      * @return string The masked string, with all but the last `$visible` characters replaced by `$maskChar`.
      *
@@ -1433,7 +1434,8 @@ class Strings
      * @note This method is useful when preparing files for Windows environments, email headers,
      *       or protocols where CRLF is the required newline format.
      */
-    public static function normalize_newlines_to_crlf(string $input): string {
+    public static function normalize_newlines_to_crlf(string $input): string
+    {
         // First, convert all lone CR to LF (to avoid creating \r\r\n below)
         $input = str_replace("\r", "\n", $input);
         // Then, convert all LF to CRLF
@@ -1448,12 +1450,13 @@ class Strings
      * The function ensures the final string is exactly `$length` characters long, trimming or limiting
      * as needed. Uses `random_int()` to ensure cryptographic security.
      *
-     * @param int    $length        The total desired length of the output string, including prefix. Defaults to 64.
-     * @param string $prefix        A string to prepend to the output. The remaining characters will be randomly generated.
+     * @param int $length The total desired length of the output string, including prefix. Defaults to 64.
+     * @param string $prefix A string to prepend to the output. The remaining characters will be randomly generated.
      * @param string $characterPool A string containing the characters to randomly choose from. Defaults to a URL-safe, unambiguous set (no `0`, `O`, `l`, `1`).
      *
      * @return string A random string of exactly `$length` characters, starting with `$prefix` if provided.
      *
+     * @throws Exception
      * @example
      * ```php
      * Strings::randomString(10);                       // e.g., 'a8B7jk3Mnp'
@@ -1468,24 +1471,10 @@ class Strings
      *       for tokens, nonces, session keys, or other security-sensitive purposes.
      *       However, it does **not** guarantee uniqueness. For universally unique identifiers, use a UUID generator.
      *
-     * @throws Exception
      */
-    public static function randomString(int $length = 64, string $prefix = '', string $characterPool = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789'): string
+    public static function randomString(int $length = 64, string $prefix = '', string $characterPool = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789',  ?bool $strict = null): string
     {
-        $randomString = $prefix;
-        $poolLength = strlen($characterPool);
-
-        if ($poolLength === 0 || $length <= strlen($randomString)) {
-            return substr($randomString, 0, $length);
-        }
-
-        $charsToAdd = $length - strlen($randomString);
-        for ($i = 0; $i < $charsToAdd; $i++) {
-            $randomChar = $characterPool[random_int(0, $poolLength - 1)];
-            $randomString .= $randomChar;
-        }
-
-        return $randomString;
+        return RandomStuff::string($length, $prefix, $characterPool, $strict);
     }
 
     /**
@@ -1494,7 +1483,7 @@ class Strings
      * This method replaces the first N characters of `$original` with the entire `$newFrontPiece`,
      * where N is the length of `$newFrontPiece`. The rest of the original string remains unchanged.
      *
-     * @param string $original      The original string whose beginning will be replaced.
+     * @param string $original The original string whose beginning will be replaced.
      * @param string $newFrontPiece The string that will replace the first part of `$original`. Its full length is used.
      *
      * @return string The resulting string with the beginning replaced by `$newFrontPiece`.
@@ -1528,26 +1517,20 @@ class Strings
      * - y is one of 8, 9, A, or B (variant 1)
      *
      * @param bool $uppercase If true (default), returns UUID in uppercase. If false, returns lowercase.
-     *
+     * @param bool|null $strict Override strict mode for this call (null = use global)
      * @return string A 36-character UUID v4 string.
      *
+     * @throws Exception;
      * @example
      * ```php
      * Strings::uuid();              // '3F6C0A7E-9F57-42DB-9A73-91F3A984D317'
      * Strings::uuid(false);         // '3f6c0a7e-9f57-42db-9a73-91f3a984d317'
      * ```
      *
-     * @throws Exception;
      */
-    public static function uuid(bool $uppercase = true): string
+    public static function uuid(bool $uppercase = true, ?bool $strict = null): string
     {
-        $data = random_bytes(16);
-        $data[6] = chr((ord($data[6]) & 0x0f) | 0x40); // Set version to 4
-        $data[8] = chr((ord($data[8]) & 0x3f) | 0x80); // Set variant to 10
-
-        $uuid = vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
-
-        return $uppercase ? strtoupper($uuid) : strtolower($uuid);
+        return RandomStuff::uuid($uppercase,$strict);
     }
 
     /**
@@ -1561,40 +1544,20 @@ class Strings
      * This format is ideal for systems that require globally unique, time-sortable identifiers.
      *
      * @param bool $uppercase Whether to return the UUID in uppercase. Defaults to true.
-     *
+     * @param bool|null $strict Override strict mode for this call (null = use global)
      * @return string A 36-character RFC-style UUIDv7 string.
      *
+     * @throws Exception
      * @example
      * ```php
      * Strings::uuidv7();        // '017F22E2-79B0-7CC3-98C4-DC0C0C07398F'
      * Strings::uuidv7(false);   // '017f22e2-79b0-7cc3-98c4-dc0c0c07398f'
      * ```
      *
-     * @throws Exception
      */
-    public static function uuidv7(bool $uppercase = true): string
+    public static function uuidv7(bool $uppercase = true, ?bool $strict = null): string
     {
-        $timestamp = (int) (microtime(true) * 1000); // Unix time in milliseconds
-        $timeHex = str_pad(dechex($timestamp), 12, '0', STR_PAD_LEFT);
-
-        $randBytes = random_bytes(10);
-        $randHex = bin2hex($randBytes);
-
-        // Insert version (7) into bits 48–51
-        $timeHex[12] = '7';
-
-        // Insert variant (10xx) into bits 64–65 (first nibble of 9th byte)
-        $randHex[0] = dechex((hexdec($randHex[0]) & 0x3) | 0x8);
-
-        $uuid = vsprintf('%s-%s-%s-%s-%s', [
-            substr($timeHex, 0, 8),
-            substr($timeHex, 8, 4),
-            substr($randHex, 0, 4),
-            substr($randHex, 4, 4),
-            substr($randHex, 8, 12),
-        ]);
-
-        return $uppercase ? strtoupper($uuid) : strtolower($uuid);
+        return RandomStuff::uuidv7($uppercase,$strict);
     }
 
     /**
@@ -1607,10 +1570,11 @@ class Strings
      * It sorts lexicographically and is safe for use in filenames, URLs, database keys, and logs.
      *
      *
-     * @param bool     $uppercase  Whether to return the ULID in uppercase (default) or lowercase.
-     *
+     * @param bool $uppercase Whether to return the ULID in uppercase (default) or lowercase.
+     * @param bool|null $strict Override strict mode for this call (null = use global)
      * @return string A 26-character ULID string.
      *
+     * @throws Exception
      * @example
      * ```php
      * Strings::ulid();                              // e.g., '01HZX7RCEJMBFZZC1P4EW6Q7NH'
@@ -1619,37 +1583,10 @@ class Strings
      * Strings::ulid(1700000000000, false);          // '01hzb5xq4rg23ndgjtw4ht9q4f'
      * ```
      *
-     * @throws Exception
      */
-   public static function ulid(bool $uppercase = true): string
+    public static function ulid(bool $uppercase = true, ?bool $strict = null): string
     {
-        // Get timestamp in milliseconds (48 bits)
-        $time = (int)(microtime(true) * 1000);
-        $timeBytes = pack('J', $time); // 8 bytes (we only need the last 6)
-
-        // Get 80 bits (10 bytes) of randomness
-        $random = random_bytes(10);
-
-        // Combine: 6 bytes from timestamp + 10 bytes random = 16 bytes (128 bits)
-        $binary = substr($timeBytes, 2) . $random;
-
-        // Crockford Base32 encoding (no 0, O, I, L)
-        $alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
-
-        $ulid = '';
-        $bits = '';
-
-        foreach (str_split($binary) as $byte) {
-            $bits .= str_pad(decbin(ord($byte)), 8, '0', STR_PAD_LEFT);
-        }
-
-        for ($i = 0; $i < 26; $i++) {
-            $chunk = substr($bits, $i * 5, 5);
-            $index = bindec($chunk);
-            $ulid .= $alphabet[$index];
-        }
-
-        return $uppercase ? $ulid : strtolower($ulid);
+        return RandomStuff::ulid($uppercase,$strict);
     }
 
     /**
@@ -1703,6 +1640,7 @@ class Strings
      *
      * @throws InvalidArgumentException If the ULID is not valid.
      *
+     * @throws Exception
      * @example
      * ```php
      * $ulid = Strings::ulid(); // e.g., '01HZX7RCEJMBFZZC1P4EW6Q7NH'
@@ -1710,7 +1648,6 @@ class Strings
      * echo $dt->format('Y-m-d H:i:s'); // e.g., "2023-11-14 21:33:20"
      * ```
      *
-     * @throws Exception
      */
     public static function ulidTimestampToDateTime(string $ulid): DateTimeImmutable
     {
@@ -1775,7 +1712,7 @@ class Strings
      * as one matches the beginning of the input string.
      *
      * @param string $haystack The string to check.
-     * @param array  $prefixes An array of string prefixes to test against.
+     * @param array $prefixes An array of string prefixes to test against.
      *
      * @return bool True if the string starts with any prefix in the array; false otherwise.
      *
@@ -1802,7 +1739,7 @@ class Strings
      * as one matches the end of the input string.
      *
      * @param string $haystack The string to check.
-     * @param array  $suffixes An array of string suffixes to test against.
+     * @param array $suffixes An array of string suffixes to test against.
      *
      * @return bool True if the string ends with any suffix in the array; false otherwise.
      *
@@ -1881,7 +1818,7 @@ class Strings
      * Optionally formats the result in grouped blocks of 4 digits/asterisks for readability.
      *
      * @param string $creditCard The raw credit card number input.
-     * @param bool   $grouped    Whether to format the result with grouped blocks (e.g., 4111 **** **** 1111). Defaults to false.
+     * @param bool $grouped Whether to format the result with grouped blocks (e.g., 4111 **** **** 1111). Defaults to false.
      *
      * @return string The obfuscated credit card string.
      *
@@ -1904,7 +1841,7 @@ class Strings
         }
 
         $first = substr($creditCard, 0, 4);
-        $last  = substr($creditCard, -4);
+        $last = substr($creditCard, -4);
         $maskedLen = $len - 8;
         $masked = str_repeat($maskChar, $maskedLen);
 
@@ -1956,10 +1893,10 @@ class Strings
     /**
      * Obfuscates the middle portion of a string, preserving the beginning and end.
      *
-     * @param string $input        The string to obfuscate (API key, token, etc.).
-     * @param int    $visibleStart Number of visible characters at the beginning.
-     * @param int    $visibleEnd   Number of visible characters at the end.
-     * @param string $maskChar     Masking character to use. Defaults to '*'.
+     * @param string $input The string to obfuscate (API key, token, etc.).
+     * @param int $visibleStart Number of visible characters at the beginning.
+     * @param int $visibleEnd Number of visible characters at the end.
+     * @param string $maskChar Masking character to use. Defaults to '*'.
      *
      * @return string The obfuscated string.
      *
@@ -1979,7 +1916,7 @@ class Strings
         }
 
         $start = substr($input, 0, $visibleStart);
-        $end   = substr($input, -$visibleEnd);
+        $end = substr($input, -$visibleEnd);
         $maskedLength = $len - $visibleTotal;
 
         return $start . str_repeat($maskChar, $maskedLength) . $end;
@@ -1993,10 +1930,10 @@ class Strings
      * If no such suffix is found, "1" is appended using the separator and optional padding.
      * When $strictSuffixOnly is true, suffix must be exactly separator followed by digits (e.g., "_123").
      *
-     * @param string   $str               The input string to modify.
-     * @param string   $separator         The separator to use before the number. Default is "_".
-     * @param int|null $padWidth          Optional zero-padding width (e.g., 3 → "007").
-     * @param bool     $strictSuffixOnly  If true, only increments suffixes with exact separator + digits. Default is false.
+     * @param string $str The input string to modify.
+     * @param string $separator The separator to use before the number. Default is "_".
+     * @param int|null $padWidth Optional zero-padding width (e.g., 3 → "007").
+     * @param bool $strictSuffixOnly If true, only increments suffixes with exact separator + digits. Default is false.
      *
      * @return string The incremented or newly suffixed string.
      *
@@ -2011,9 +1948,10 @@ class Strings
     public static function incrementString(
         string $str,
         string $separator = '_',
-        ?int $padWidth = null,
-        bool $strictSuffixOnly = false
-    ): string {
+        ?int   $padWidth = null,
+        bool   $strictSuffixOnly = false
+    ): string
+    {
         if ($strictSuffixOnly) {
             // Only match strings ending in exactly "separator + digits"
             $pattern = '/^(.*)' . preg_quote($separator, '/') . '(\d+)$/';
@@ -2044,11 +1982,11 @@ class Strings
      * Preserves separator and zero-padding unless the number reaches 0 and $removeIfZero is true.
      * If no numeric suffix is found, the original string is returned unchanged.
      *
-     * @param string   $str            The input string to modify.
-     * @param string   $separator      The separator before the number. Default is "_".
-     * @param int|null $padWidth       If provided, output is zero-padded to this width. Otherwise, preserves original width.
-     * @param bool     $removeIfZero   If true, removes the numeric suffix entirely when result reaches 0. Default is false.
-     * @param bool     $strictSuffixOnly If true, only decrements suffixes of the form "separator + digits". Default is false.
+     * @param string $str The input string to modify.
+     * @param string $separator The separator before the number. Default is "_".
+     * @param int|null $padWidth If provided, output is zero-padded to this width. Otherwise, preserves original width.
+     * @param bool $removeIfZero If true, removes the numeric suffix entirely when result reaches 0. Default is false.
+     * @param bool $strictSuffixOnly If true, only decrements suffixes of the form "separator + digits". Default is false.
      *
      * @return string The decremented or cleaned string.
      *
@@ -2063,10 +2001,11 @@ class Strings
     public static function decrementString(
         string $str,
         string $separator = '_',
-        ?int $padWidth = null,
-        bool $removeIfZero = false,
-        bool $strictSuffixOnly = false
-    ): string {
+        ?int   $padWidth = null,
+        bool   $removeIfZero = false,
+        bool   $strictSuffixOnly = false
+    ): string
+    {
         if ($strictSuffixOnly) {
             $pattern = '/^(.*)' . preg_quote($separator, '/') . '(\d+)$/';
         } else {
@@ -2096,9 +2035,9 @@ class Strings
      *
      * Only includes lowercase ASCII words without punctuation, between $minLen and $maxLen characters.
      *
-     * @param string $path   Path to the wordlist file. Defaults to /usr/share/dict/words.
-     * @param int    $minLen Minimum word length to include. Defaults to 3.
-     * @param int    $maxLen Maximum word length to include. Defaults to 12.
+     * @param string $path Path to the wordlist file. Defaults to /usr/share/dict/words.
+     * @param int $minLen Minimum word length to include. Defaults to 3.
+     * @param int $maxLen Maximum word length to include. Defaults to 12.
      *
      * @return array An array of lowercase, clean words.
      *
@@ -2132,14 +2071,15 @@ class Strings
      *
      * Useful for URLs, filenames, short codes, etc. Optionally customizable.
      *
-     * @param array|null $wordlist    Optional preloaded word list. Loads from /usr/share/dict/words by default.
-     * @param int        $numberRange Max numeric suffix. Defaults to 100.
-     * @param string     $separator   Separator between slug parts (e.g., '-', '_', '.'). Defaults to '-'.
-     * @param string     $prefix      Optional prefix string to prepend. No separator automatically added.
-     * @param string     $suffix      Optional suffix string to append. No separator automatically added.
+     * @param array|null $wordlist Optional preloaded word list. Loads from /usr/share/dict/words by default.
+     * @param int $numberRange Max numeric suffix. Defaults to 100.
+     * @param string $separator Separator between slug parts (e.g., '-', '_', '.'). Defaults to '-'.
+     * @param string $prefix Optional prefix string to prepend. No separator automatically added.
+     * @param string $suffix Optional suffix string to append. No separator automatically added.
      *
      * @return string Slug in the format: {$prefix}word{$sep}word{$sep}number{$suffix}
      *
+     * @throws Exception
      * @example
      * ```php
      * Strings::randomSlugFromWordlist();                            // 'silent-sunset-42'
@@ -2147,24 +2087,24 @@ class Strings
      * Strings::randomSlugFromWordlist(null, 100, '-', 'inv-', '-qa'); // 'inv-bold-stone-91-qa'
      * ```
      *
-     * @throws Exception
      */
     public static function randomSlugFromWordlist(
         ?array $wordlist = null,
-        int $numberRange = 100,
+        int    $numberRange = 100,
         string $separator = '-',
         string $prefix = '',
         string $suffix = ''
-    ): string {
+    ): string
+    {
         $wordlist ??= self::loadCleanWordList();
 
         if (count($wordlist) < 2) {
             throw new RuntimeException("Wordlist must contain at least 2 clean words.");
         }
 
-        $word1 = $wordlist[random_int(0, count($wordlist) - 1)];
-        $word2 = $wordlist[random_int(0, count($wordlist) - 1)];
-        $num   = random_int(0, $numberRange);
+        $word1 = $wordlist[RandomStuff::int(0, count($wordlist) - 1)];
+        $word2 = $wordlist[RandomStuff::int(0, count($wordlist) - 1)];
+        $num = RandomStuff::int(0, $numberRange);
 
         $core = implode($separator, [$word1, $word2, $num]);
 
@@ -2178,9 +2118,9 @@ class Strings
      * Iterates through the array of needles and returns true as soon as one is found
      * within the haystack. Optionally performs case-insensitive matching.
      *
-     * @param string $haystack   The string to search within.
-     * @param array  $needles    An array of substrings to look for.
-     * @param bool   $ignoreCase Whether to perform case-insensitive matching. Default is false.
+     * @param string $haystack The string to search within.
+     * @param array $needles An array of substrings to look for.
+     * @param bool $ignoreCase Whether to perform case-insensitive matching. Default is false.
      *
      * @return bool True if any needle is found in the haystack; false otherwise.
      *
@@ -2260,15 +2200,19 @@ class Strings
         return preg_replace('/[^\p{L}]+/u', '', $str);
     }
 
+
     /**
      * Randomly shuffles the characters in a multibyte string.
      *
-     * Splits the string into an array of characters, randomizes the order using shuffle(),
+     * Splits the string into an array of characters, randomizes the order using PHP's shuffle(),
      * and returns the resulting string. Useful for non-critical randomness (e.g., games, CAPTCHAs).
      *
      * @param string $str The input string to shuffle.
      *
      * @return string The string with its characters randomly reordered.
+     *
+     * @deprecated 1.0.5
+     * @see scramble
      *
      * @example
      * ```php
@@ -2281,10 +2225,40 @@ class Strings
      */
     public static function shuffle(string $str): string
     {
+        return self::scramble($str);
+    }
+
+    /**
+     * Randomly shuffles the characters in a multibyte string.
+     *
+     * Splits the string into an array of characters, randomizes the order using PHP's shuffle(),
+     * and returns the resulting string. Useful for non-critical randomness (e.g., games, CAPTCHAs).
+     *
+     * @param string $str The input string to shuffle.
+     *
+     * @return string The string with its characters randomly reordered.
+     *
+     * @example
+     * ```php
+     * Strings::scramble('hello');        // might return 'lohel', 'elhol', etc.
+     * Strings::scramble('áéíóú');        // preserves multibyte characters correctly
+     * ```
+     *
+     * @since 1.0.5
+     *
+     * @note This is not cryptographically secure. Do not use for password generation or security tokens.
+     *       Multibyte-safe via mb_str_split().
+     */
+    public static function scramble(string $str): string
+    {
         $array = mb_str_split($str);
         shuffle($array);
         return implode('', $array);
     }
+
+
+
+
 
     /**
      * Indents each line of a string by a given number of characters.
@@ -2292,9 +2266,9 @@ class Strings
      * Adds padding to the beginning of each line in a multiline string using the specified character.
      * Useful for formatting logs, code, or nested structures.
      *
-     * @param string $str    The input string, possibly multiline.
-     * @param int    $spaces The number of characters to indent each line. Default is 4.
-     * @param string $char   The character to use for indentation. Default is a space.
+     * @param string $str The input string, possibly multiline.
+     * @param int $spaces The number of characters to indent each line. Default is 4.
+     * @param string $char The character to use for indentation. Default is a space.
      *
      * @return string The indented string.
      *
@@ -2317,9 +2291,9 @@ class Strings
      * Useful for reversing `indent()`, reformatting text, or cleaning up deeply nested blocks.
      * Only removes characters if they match the given character and are present at the start of the line.
      *
-     * @param string $str    The multiline string to outdent.
-     * @param int    $count  Number of leading characters to remove per line. Default is 4.
-     * @param string $char   The character to remove. Default is space.
+     * @param string $str The multiline string to outdent.
+     * @param int $count Number of leading characters to remove per line. Default is 4.
+     * @param string $char The character to remove. Default is space.
      *
      * @return string The de-indented string.
      *
@@ -2384,7 +2358,7 @@ class Strings
      * If the string begins with the specified prefix, it is removed.
      * Otherwise, the original string is returned unchanged.
      *
-     * @param string $str    The input string to process.
+     * @param string $str The input string to process.
      * @param string $prefix The prefix to remove if found at the beginning.
      *
      * @return string The string without the prefix (if removed).
@@ -2409,7 +2383,7 @@ class Strings
      * If the string ends with the specified suffix, it is removed.
      * Otherwise, the original string is returned unchanged.
      *
-     * @param string $str    The input string to process.
+     * @param string $str The input string to process.
      * @param string $suffix The suffix to remove if found at the end.
      *
      * @return string The string without the suffix (if removed).
@@ -2434,10 +2408,10 @@ class Strings
      * If the string is shorter than or equal to the limit, it is returned as-is.
      * If truncated, the ellipsis is appended and included in the total length.
      *
-     * @param string  $str         The input string.
-     * @param int     $maxChars    Maximum total characters, including ellipsis.
-     * @param string  $ellipsis    String to append after truncation. Default is '…'.
-     * @param bool    $preserveWords If true, avoid breaking words in the middle.
+     * @param string $str The input string.
+     * @param int $maxChars Maximum total characters, including ellipsis.
+     * @param string $ellipsis String to append after truncation. Default is '…'.
+     * @param bool $preserveWords If true, avoid breaking words in the middle.
      *
      * @return string The truncated string, with ellipsis if applicable.
      *
@@ -2481,10 +2455,10 @@ class Strings
      * - Optionally avoids breaking mid-word
      * - Appends an ellipsis or custom suffix if truncated
      *
-     * @param string $html            The HTML string.
-     * @param int    $maxChars        Max visible characters, including ellipsis.
-     * @param string $ellipsis        What to append if truncated. Default is '…'.
-     * @param bool   $preserveWords   Whether to avoid cutting mid-word.
+     * @param string $html The HTML string.
+     * @param int $maxChars Max visible characters, including ellipsis.
+     * @param string $ellipsis What to append if truncated. Default is '…'.
+     * @param bool $preserveWords Whether to avoid cutting mid-word.
      *
      * @return string Truncated HTML-safe string.
      *
@@ -2839,9 +2813,9 @@ class Strings
      * - It's a known acronym (e.g., NASA, PHP), which stays uppercase
      * - It's a stop word (e.g., and, the, in), which remains lowercase — unless it's the first word
      *
-     * @param string $str         The input string to convert.
-     * @param array  $acronyms    Acronyms to preserve in uppercase. Default includes common technical acronyms.
-     * @param array  $stopWords   Stop words to keep lowercase unless at the start. Default includes common English stop words.
+     * @param string $str The input string to convert.
+     * @param array $acronyms Acronyms to preserve in uppercase. Default includes common technical acronyms.
+     * @param array $stopWords Stop words to keep lowercase unless at the start. Default includes common English stop words.
      *
      * @return string The smartly title-cased string.
      *
@@ -2856,12 +2830,13 @@ class Strings
      */
     public static function smartTitleCase(
         string $str,
-        array $acronyms = ['ID', 'HTML', 'CSS', 'PHP', 'NASA', 'API', 'URL', 'JSON'],
-        array $stopWords = ['and', 'or', 'but', 'for', 'nor', 'a', 'an', 'the', 'in', 'on', 'at', 'to', 'by', 'of', 'with']
-    ): string {
+        array  $acronyms = ['ID', 'HTML', 'CSS', 'PHP', 'NASA', 'API', 'URL', 'JSON'],
+        array  $stopWords = ['and', 'or', 'but', 'for', 'nor', 'a', 'an', 'the', 'in', 'on', 'at', 'to', 'by', 'of', 'with']
+    ): string
+    {
         $words = preg_split('/(\s+)/u', $str, -1, PREG_SPLIT_DELIM_CAPTURE);
         $acronymMap = array_change_key_case(array_flip($acronyms), CASE_LOWER);
-        $stopMap    = array_change_key_case(array_flip($stopWords), CASE_LOWER);
+        $stopMap = array_change_key_case(array_flip($stopWords), CASE_LOWER);
 
         foreach ($words as $i => &$word) {
             if (trim($word) === '') continue;
@@ -2966,8 +2941,8 @@ class Strings
      * Validates that the string contains only hexadecimal characters (0–9, a–f, A–F).
      * Optionally allows a "0x" or "0X" prefix if $allowPrefix is true.
      *
-     * @param string $str          The string to evaluate.
-     * @param bool   $allowPrefix  Whether to allow an optional '0x' or '0X' prefix. Default is false.
+     * @param string $str The string to evaluate.
+     * @param bool $allowPrefix Whether to allow an optional '0x' or '0X' prefix. Default is false.
      *
      * @return bool True if the string is a valid hex value; false otherwise.
      *
@@ -2993,8 +2968,8 @@ class Strings
      * Normalizes a hexadecimal string by removing the optional "0x"/"0X" prefix
      * and optionally converting to lowercase or uppercase.
      *
-     * @param string $hex         The input hex string (with or without prefix).
-     * @param bool   $toUpper     Whether to convert the result to uppercase. Default is false (lowercase).
+     * @param string $hex The input hex string (with or without prefix).
+     * @param bool $toUpper Whether to convert the result to uppercase. Default is false (lowercase).
      *
      * @return string The normalized hex string with no prefix and consistent casing.
      *
@@ -3020,8 +2995,8 @@ class Strings
      * returns the normalized hex string (prefix removed, casing standardized).
      * If the input is invalid, returns null.
      *
-     * @param string $hex         The input hex string to validate and sanitize.
-     * @param bool   $toUpper     Whether to return the result in uppercase. Default is false (lowercase).
+     * @param string $hex The input hex string to validate and sanitize.
+     * @param bool $toUpper Whether to return the result in uppercase. Default is false (lowercase).
      *
      * @return string|null The cleaned hex string, or null if invalid.
      *
@@ -3353,8 +3328,8 @@ class Strings
      * Useful for API authentication or secure data signing.
      *
      * @param string $payload The message to sign.
-     * @param string $key     The secret key.
-     * @param string $algo    The hashing algorithm to use. Default is 'sha256'.
+     * @param string $key The secret key.
+     * @param string $algo The hashing algorithm to use. Default is 'sha256'.
      *
      * @return string The generated HMAC hash as a hex string.
      *
@@ -3375,11 +3350,11 @@ class Strings
      * This is useful for authenticating webhooks or signed payloads. It securely compares
      * the provided signature with a locally generated one, avoiding timing attacks.
      *
-     * @param string $payload   The raw message or data (e.g., webhook body).
+     * @param string $payload The raw message or data (e.g., webhook body).
      * @param string $signature The HMAC signature to verify (hex or base64).
-     * @param string $secret    The shared secret key used to generate the original signature.
-     * @param string $algo      Hashing algorithm to use (e.g. 'sha256', 'sha1'). Default is 'sha256'.
-     * @param bool   $isBase64  Whether the signature is base64-encoded instead of hex.
+     * @param string $secret The shared secret key used to generate the original signature.
+     * @param string $algo Hashing algorithm to use (e.g. 'sha256', 'sha1'). Default is 'sha256'.
+     * @param bool $isBase64 Whether the signature is base64-encoded instead of hex.
      *
      * @return bool True if the signature is valid; false otherwise.
      *
@@ -3394,8 +3369,9 @@ class Strings
         string $signature,
         string $secret,
         string $algo = 'sha256',
-        bool $isBase64 = false
-    ): bool {
+        bool   $isBase64 = false
+    ): bool
+    {
         $expected = hash_hmac($algo, $payload, $secret, !$isBase64); // binary or hex
         return hash_equals($expected, $isBase64 ? base64_decode($signature) : $signature);
     }
@@ -3406,10 +3382,10 @@ class Strings
      * Reconstructs Twilio’s signing scheme by combining the request URL and sorted POST params,
      * then validates the Base64 HMAC-SHA1 signature against the X-Twilio-Signature header.
      *
-     * @param string $url        The full request URL (no query string).
-     * @param array  $params     The POST parameters (from $_POST).
-     * @param string $signature  The value of X-Twilio-Signature header.
-     * @param string $authToken  Your Twilio auth token.
+     * @param string $url The full request URL (no query string).
+     * @param array $params The POST parameters (from $_POST).
+     * @param string $signature The value of X-Twilio-Signature header.
+     * @param string $authToken Your Twilio auth token.
      *
      * @return bool True if the signature matches; false otherwise.
      *
@@ -3425,10 +3401,11 @@ class Strings
      */
     public static function verifyTwilioSignature(
         string $url,
-        array $params,
+        array  $params,
         string $signature,
         string $authToken
-    ): bool {
+    ): bool
+    {
         ksort($params);
         $data = $url;
         foreach ($params as $key => $value) {
@@ -3438,7 +3415,6 @@ class Strings
         $expected = base64_encode(hash_hmac('sha1', $data, $authToken, true));
         return hash_equals($expected, $signature);
     }
-
 
 
     /**
@@ -3586,10 +3562,6 @@ class Strings
         $formatted = number_format(abs($amount), 2);
         return ($amount < 0 ? '-' : '') . '$' . $formatted;
     }
-
-
-
-
 
 
 }

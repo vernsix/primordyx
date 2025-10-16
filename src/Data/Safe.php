@@ -18,6 +18,7 @@ namespace Primordyx\Data;
 use Exception;
 use Primordyx\Database\DatabaseSafePersistence;
 use Primordyx\Database\SafePersistenceInterface;
+use Primordyx\Utils\RandomStuff;
 use Random\RandomException;
 use RuntimeException;
 
@@ -273,7 +274,8 @@ class Safe
      */
     protected static function generateSafeId(): string
     {
-        return bin2hex(random_bytes(32));
+        // return bin2hex(random_bytes(32));
+        return RandomStuff::sessionId(true);
     }
 
     /**

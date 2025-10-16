@@ -1,0 +1,437 @@
+/**
+ * FormBuilder Modular CSS - Primordyx Framework
+ *
+ * Completely autonomous CSS for FormBuilder that uses your existing color variables
+ * from styles.css. This CSS is designed to be included alongside your existing
+ * styles.css without any conflicts or interference.
+ *
+ * @package     Primordyx
+ * @author      Your Name
+ * @since       1.0.0
+ */
+
+/* ============================================================================
+   Form Container
+   ============================================================================ */
+
+.px-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    background: var(--color-bg-primary);
+    box-shadow: 0 2px 4px var(--shadow-light);
+    font-family: inherit;
+}
+
+/* Responsive form */
+@media (max-width: 768px) {
+    .px-form {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* ============================================================================
+   Field Container
+   ============================================================================ */
+
+.px-form__field {
+    margin-bottom: 1.5rem;
+}
+
+.px-form__field:last-of-type {
+    margin-bottom: 2rem; /* Extra space before actions */
+}
+
+/* ============================================================================
+   Labels
+   ============================================================================ */
+
+.px-form__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.px-form__legend {
+    font-weight: 500;
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    padding: 0;
+    border: none;
+}
+
+/* ============================================================================
+   Input Fields (Text, Email, Password, etc.)
+   ============================================================================ */
+
+.px-form__input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.px-form__input:focus {
+    outline: none;
+    border-color: var(--color-primary-medium);
+    box-shadow: 0 0 0 3px rgba(106, 142, 111, 0.25);
+}
+
+.px-form__input:disabled {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-tertiary);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.px-form__input:readonly {
+    background-color: var(--color-bg-secondary);
+    cursor: default;
+}
+
+/* ============================================================================
+   Error States
+   ============================================================================ */
+
+.px-form__input--error {
+    border-color: var(--color-error);
+    background-color: #fdf2f2;
+}
+
+.px-form__input--error:focus {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.25);
+}
+
+.px-form__error {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+    line-height: 1.4;
+}
+
+/* ============================================================================
+   Textarea
+   ============================================================================ */
+
+textarea.px-form__input {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
+}
+
+/* ============================================================================
+   Select Dropdowns
+   ============================================================================ */
+
+select.px-form__input {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select.px-form__input[multiple] {
+    background-image: none;
+    padding-right: 0.75rem;
+    height: auto;
+    min-height: 120px;
+}
+
+/* ============================================================================
+   Checkboxes
+   ============================================================================ */
+
+.px-form__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.px-form__checkbox input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    flex-shrink: 0;
+    margin-top: 0.125rem; /* Align with text */
+}
+
+.px-form__checkbox-label {
+    flex: 1;
+    line-height: 1.4;
+}
+
+/* ============================================================================
+   Radio Buttons
+   ============================================================================ */
+
+.px-form__radio-group {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.px-form__radio {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0.75rem;
+}
+
+.px-form__radio:last-child {
+    margin-bottom: 0;
+}
+
+.px-form__radio input[type="radio"] {
+    width: auto;
+    margin: 0;
+    flex-shrink: 0;
+    margin-top: 0.125rem; /* Align with text */
+}
+
+.px-form__radio-label {
+    flex: 1;
+    line-height: 1.4;
+}
+
+/* ============================================================================
+   File Upload
+   ============================================================================ */
+
+input[type="file"].px-form__input {
+    padding: 0.5rem;
+    background-color: var(--color-bg-primary);
+    cursor: pointer;
+}
+
+input[type="file"].px-form__input::-webkit-file-upload-button {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-light);
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+input[type="file"].px-form__input::-webkit-file-upload-button:hover {
+    background-color: var(--color-bg-tertiary);
+}
+
+/* ============================================================================
+   Form Actions (Submit Buttons)
+   ============================================================================ */
+
+.px-form__actions {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--color-border-light);
+    padding-top: 1.5rem;
+}
+
+.px-form__button {
+    background-color: var(--color-primary-medium);
+    color: var(--color-text-white);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+}
+
+.px-form__button:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px var(--shadow-medium);
+}
+
+.px-form__button:active {
+    transform: translateY(0);
+}
+
+.px-form__button:disabled {
+    background-color: var(--color-text-tertiary);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Button Variants */
+.px-form__button--secondary {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-light);
+}
+
+.px-form__button--secondary:hover {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-primary-dark);
+}
+
+.px-form__button--danger {
+    background-color: var(--color-error);
+    color: var(--color-text-white);
+}
+
+.px-form__button--danger:hover {
+    background-color: #a0302a;
+}
+
+.px-form__button--outline {
+    background-color: transparent;
+    color: var(--color-primary-medium);
+    border: 1px solid var(--color-primary-medium);
+}
+
+.px-form__button--outline:hover {
+    background-color: var(--color-primary-medium);
+    color: var(--color-text-white);
+}
+
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+@media (max-width: 600px) {
+    .px-form__button {
+        display: block;
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+
+    .px-form__actions {
+        text-align: stretch;
+    }
+}
+
+/* ============================================================================
+   Accessibility Improvements
+   ============================================================================ */
+
+/* Focus indicators for better accessibility */
+.px-form__checkbox:focus-within,
+.px-form__radio:focus-within {
+    outline: 2px solid var(--color-primary-medium);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* Screen reader only content */
+.px-form__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================================================
+   Form Layouts (Optional Utilities)
+   ============================================================================ */
+
+/* Inline form fields */
+.px-form--inline .px-form__field {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    vertical-align: top;
+}
+
+.px-form--inline .px-form__label {
+    display: inline-block;
+    width: auto;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+}
+
+.px-form--inline .px-form__input {
+    width: auto;
+    display: inline-block;
+}
+
+/* Two column layout */
+.px-form--two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.px-form--two-column .px-form__field--full-width {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .px-form--two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================================
+   Success/Info Messages (Optional)
+   ============================================================================ */
+
+.px-form__message {
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.px-form__message--success {
+    background-color: rgba(106, 142, 111, 0.1);
+    border: 1px solid var(--color-primary-light);
+    color: var(--color-primary-dark);
+}
+
+.px-form__message--error {
+    background-color: rgba(192, 57, 43, 0.1);
+    border: 1px solid var(--color-error);
+    color: var(--color-error);
+}
+
+.px-form__message--info {
+    background-color: var(--color-bg-accent);
+    border: 1px solid var(--color-border-light);
+    color: var(--color-text-primary);
+}
+
+.px-form__message--warning {
+    background-color: var(--color-cat-fact-bg);
+    border: 1px solid var(--color-cat-fact-border);
+    color: var(--color-primary-dark);
+}

@@ -16,6 +16,7 @@ declare(strict_types=1);
 
 namespace Primordyx\Security;
 
+use Primordyx\Utils\RandomStuff;
 use Random\RandomException;
 use RuntimeException;
 
@@ -108,7 +109,9 @@ class Crypto
         $encryptionKey = self::deriveKey($masterKey);
 
         // Generate random IV for each encryption (12 bytes for GCM)
-        $iv = random_bytes(self::IV_LENGTH);
+        // $iv = random_bytes(self::IV_LENGTH);
+        $iv = RandomStuff::raw(self::IV_LENGTH, true);
+
 
         // Encrypt with GCM (provides both confidentiality and authenticity)
         $tag = '';
@@ -204,7 +207,7 @@ class Crypto
      */
     public static function generateKey(): string
     {
-        return base64_encode(random_bytes(32)); // 256 bits
+        return base64_encode(RandomStuff::raw(32,true)); // 256 bits
     }
 
     /**

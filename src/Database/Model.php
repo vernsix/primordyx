@@ -553,7 +553,7 @@ abstract class Model implements JsonSerializable
      * }
      * ```
      */
-    protected function table(): string
+    public function table(): string
     {
         return $this->table ?: strtolower(static::class) . 's';
     }
@@ -1981,6 +1981,16 @@ abstract class Model implements JsonSerializable
         $this->queryBuilder = null;
 
         return $stmt->rowCount();
+    }
+
+    /**
+     * Get the primary key field name (public accessor)
+     *
+     * @return string
+     */
+    public function primaryKey(): string
+    {
+        return $this->primaryKey;
     }
 
 }
