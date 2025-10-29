@@ -341,6 +341,27 @@ abstract class SchemaBase
     }
 
     /**
+     * Create a tiny integer field
+     *
+     * Creates an 8-bit signed integer field.
+     * Range: -128 to 127 (or 0 to 255 if unsigned)
+     * Commonly used for small numeric values, flags, or boolean-like fields.
+     *
+     * @return SchemaField  Field instance for chaining
+     *
+     * @example
+     * ```php
+     * 'status' => $this->tinyInt()->unsigned()->default(0)
+     * 'flag' => $this->tinyInt()->unsigned()->nullable()
+     * ```
+     */
+    protected function tinyInt(): SchemaField
+    {
+        return new SchemaField('tinyInt');
+    }
+
+
+    /**
      * Alias for boolean()
      *
      * @return SchemaField

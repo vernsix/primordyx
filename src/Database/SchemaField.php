@@ -109,6 +109,7 @@ class SchemaField
     private const TYPE_MAP = [
         'int' => 'INT',
         'bigInt' => 'BIGINT',
+        'tinyInt' => 'TINYINT',
         'string' => 'VARCHAR',
         'text' => 'TEXT',
         'datetime' => 'DATETIME',
@@ -129,6 +130,7 @@ class SchemaField
     private const PHP_TYPE_MAP = [
         'int' => 'int',
         'bigInt' => 'int',
+        'tinyInt' => 'int',
         'string' => 'string',
         'text' => 'string',
         'datetime' => '\\DateTime',
@@ -240,6 +242,28 @@ class SchemaField
     {
         return new self('bigInt');
     }
+
+    /**
+     * Create a tiny integer field
+     *
+     * Creates an 8-bit signed integer field for storing small numbers.
+     * Range: -128 to 127 (signed) or 0 to 255 (unsigned).
+     *
+     * @return self         Returns new SchemaField instance for method chaining
+     *
+     * @example
+     * ```php
+     * SchemaField::tinyInt()->unsigned()->default(0);
+     * SchemaField::tinyInt()->nullable();
+     * ```
+     */
+    public static function tinyInt(): self
+    {
+        return new self('tinyInt');
+    }
+
+
+
 
     /**
      * Create a string/varchar field
