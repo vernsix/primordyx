@@ -49,6 +49,11 @@ define('APP_ROOT', $currentDir);
 // Load Composer autoloader from current project
 require_once APP_ROOT . '/vendor/autoload.php';
 
+# 2025-10-29
+// Load application classes from app directory
+use Primordyx\AppAutoLoader;
+AppAutoLoader::enable(APP_ROOT, 'app');
+
 // Set up paths for CLI classes (from current project)
 $cliPath = APP_ROOT . '/vendor/vernsix/primordyx/CLI';
 

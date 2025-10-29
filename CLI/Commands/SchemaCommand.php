@@ -18,6 +18,8 @@ namespace PrimordyxCLI;
 
 use Primordyx\Database\SchemaBase;
 use RuntimeException;
+use ReflectionClass;
+use Exception;
 
 /**
  * CLI command for schema-based generation
@@ -36,6 +38,8 @@ use RuntimeException;
  * @package PrimordyxCLI
  * @since 1.0.0
  * @see SchemaBase For schema definition system
+ *
+ * @phpstan-type SchemaClass class-string<SchemaBase>
  */
 class SchemaCommand extends AbstractCommand
 {
@@ -106,7 +110,7 @@ Notes:
     /**
      * Execute the command
      *
-     * @param array $args Command arguments
+     * @param array<string> $args Command arguments
      * @return void
      */
     public function execute(array $args): void
@@ -151,8 +155,8 @@ Notes:
     /**
      * Parse command options from arguments
      *
-     * @param array &$args Arguments array (modified by reference)
-     * @return array Options array
+     * @param array<string> $args Arguments array (modified by reference)
+     * @return array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool}
      */
     private function parseOptions(array &$args): array
     {
@@ -198,8 +202,8 @@ Notes:
     /**
      * Handle trait generation command
      *
-     * @param array $args Command arguments
-     * @param array $options Command options
+     * @param array<string> $args Command arguments
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function handleTraitGeneration(array $args, array $options): void
@@ -216,8 +220,8 @@ Notes:
     /**
      * Handle migration generation command
      *
-     * @param array $args Command arguments
-     * @param array $options Command options
+     * @param array<string> $args Command arguments
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function handleMigrationGeneration(array $args, array $options): void
@@ -234,8 +238,8 @@ Notes:
     /**
      * Handle full generation (trait + migration)
      *
-     * @param array $args Command arguments
-     * @param array $options Command options
+     * @param array<string> $args Command arguments
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function handleFullGeneration(array $args, array $options): void
@@ -259,11 +263,12 @@ Notes:
      * Generate trait for a single schema
      *
      * @param string $schemaName Schema class name
-     * @param array $options Command options
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function generateSingleTrait(string $schemaName, array $options): void
     {
+        /** @var SchemaClass $schemaClass */
         $schemaClass = $this->resolveSchemaClass($schemaName, $options['path']);
 
         if ($options['dry-run']) {
@@ -276,7 +281,9 @@ Notes:
                 $this->out("Generating trait for {$schemaClass}...");
             }
 
-            $success = $schemaClass::generateTrait();
+            // Use call_user_func to avoid IDE warnings about string method calls
+            /** @var bool $success */
+            $success = call_user_func([$schemaClass, 'generateTrait']);
 
             if ($success) {
                 $modelName = $this->getModelNameFromSchema($schemaName);
@@ -293,11 +300,12 @@ Notes:
      * Generate migration for a single schema
      *
      * @param string $schemaName Schema class name
-     * @param array $options Command options
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function generateSingleMigration(string $schemaName, array $options): void
     {
+        /** @var SchemaClass $schemaClass */
         $schemaClass = $this->resolveSchemaClass($schemaName, $options['path']);
 
         if ($options['dry-run']) {
@@ -310,7 +318,10 @@ Notes:
                 $this->out("Generating migration for {$schemaClass}...");
             }
 
-            $filepath = $schemaClass::writeMigration();
+            // Use call_user_func to avoid IDE warnings about string method calls
+            /** @var string $filepath */
+            $filepath = call_user_func([$schemaClass, 'writeMigration']);
+
             $this->out("✓ Generated migration: {$filepath}");
         } catch (RuntimeException $e) {
             $this->out("✗ Error generating migration for {$schemaClass}: " . $e->getMessage());
@@ -320,7 +331,7 @@ Notes:
     /**
      * Generate traits for all schemas
      *
-     * @param array $options Command options
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function generateAllTraits(array $options): void
@@ -350,7 +361,10 @@ Notes:
                     $this->out("Processing {$schemaName}...");
                 }
 
-                $result = $schemaClass::generateTrait();
+                // Use call_user_func to avoid IDE warnings
+                /** @var SchemaClass $schemaClass */
+                /** @var bool $result */
+                $result = call_user_func([$schemaClass, 'generateTrait']);
 
                 if ($result) {
                     $modelName = $this->getModelNameFromSchema($schemaName);
@@ -374,7 +388,7 @@ Notes:
     /**
      * Generate migrations for all schemas
      *
-     * @param array $options Command options
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function generateAllMigrations(array $options): void
@@ -404,7 +418,11 @@ Notes:
                     $this->out("Processing {$schemaName}...");
                 }
 
-                $filepath = $schemaClass::writeMigration();
+                // Use call_user_func to avoid IDE warnings
+                /** @var SchemaClass $schemaClass */
+                /** @var string $filepath */
+                $filepath = call_user_func([$schemaClass, 'writeMigration']);
+
                 $filename = basename($filepath);
                 $this->out("✓ {$schemaName} → migrations/{$filename}");
                 $success++;
@@ -422,7 +440,7 @@ Notes:
     /**
      * Handle listing all schemas
      *
-     * @param array $options Command options
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function handleListSchemas(array $options): void
@@ -442,8 +460,15 @@ Notes:
 
             // Try to get table name
             try {
+                /** @var SchemaClass $schemaClass */
+                if (!class_exists($schemaClass)) {
+                    $this->out("  • {$schemaName} (class not found)");
+                    continue;
+                }
+
+                /** @var SchemaBase $instance */
                 $instance = new $schemaClass();
-                $reflection = new \ReflectionClass($instance);
+                $reflection = new ReflectionClass($instance);
                 $tableProperty = $reflection->getProperty('table');
                 $tableProperty->setAccessible(true);
                 $tableName = $tableProperty->getValue($instance);
@@ -452,7 +477,7 @@ Notes:
                 $this->out("    Model: {$modelName}");
                 $this->out("    Table: {$tableName}");
                 $this->out("");
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 $this->out("  • {$schemaName} (unable to read details)");
             }
         }
@@ -464,8 +489,8 @@ Notes:
     /**
      * Handle schema status check
      *
-     * @param array $args Command arguments
-     * @param array $options Command options
+     * @param array<string> $args Command arguments
+     * @param array{path: string, force: bool, dry-run: bool, verbose: bool, all: bool} $options Command options
      * @return void
      */
     private function handleSchemaStatus(array $args, array $options): void
@@ -494,20 +519,25 @@ Notes:
         // Check for migrations
         $migrationDir = getcwd() . '/migrations';
         if (is_dir($migrationDir)) {
-            $instance = new $schemaClass();
-            $reflection = new \ReflectionClass($instance);
-            $tableProperty = $reflection->getProperty('table');
-            $tableProperty->setAccessible(true);
-            $tableName = $tableProperty->getValue($instance);
+            /** @var SchemaClass $schemaClass */
+            if (class_exists($schemaClass)) {
+                /** @var SchemaBase $instance */
+                $instance = new $schemaClass();
+                $reflection = new ReflectionClass($instance);
+                $tableProperty = $reflection->getProperty('table');
+                $tableProperty->setAccessible(true);
+                /** @var string $tableName */
+                $tableName = $tableProperty->getValue($instance);
 
-            $migrations = glob("{$migrationDir}/*_{$tableName}*.sql");
-            if (!empty($migrations)) {
-                $this->out("\n✓ Migrations found:");
-                foreach ($migrations as $migration) {
-                    $this->out("  - " . basename($migration));
+                $migrations = glob("{$migrationDir}/*_{$tableName}*.sql");
+                if (!empty($migrations)) {
+                    $this->out("\n✓ Migrations found:");
+                    foreach ($migrations as $migration) {
+                        $this->out("  - " . basename($migration));
+                    }
+                } else {
+                    $this->out("\n✗ No migrations found for table: {$tableName}");
                 }
-            } else {
-                $this->out("\n✗ No migrations found for table: {$tableName}");
             }
         }
 
@@ -518,7 +548,8 @@ Notes:
      * Discover all schema classes in a directory
      *
      * @param string $path Directory path to search
-     * @return array Array of fully qualified schema class names
+     * @return array<SchemaClass> Array of fully qualified schema class names
+     * @phpstan-return array<SchemaClass>
      */
     private function discoverSchemas(string $path): array
     {
@@ -529,7 +560,9 @@ Notes:
         }
 
         // Use SchemaBase's discovery method
-        return SchemaBase::discoverSchemas($path);
+        /** @var array<SchemaClass> $schemas */
+        $schemas = SchemaBase::discoverSchemas($path);
+        return $schemas;
     }
 
     /**
@@ -539,12 +572,14 @@ Notes:
      * @param string $path Schema directory path
      * @return string Fully qualified class name
      * @throws RuntimeException If schema class not found
+     * @phpstan-return SchemaClass
      */
     private function resolveSchemaClass(string $schemaName, string $path): string
     {
         // If already fully qualified, return as is
         if (strpos($schemaName, '\\') !== false) {
-            if (class_exists($schemaName)) {
+            if (class_exists($schemaName) && is_subclass_of($schemaName, SchemaBase::class)) {
+                /** @var SchemaClass $schemaName */
                 return $schemaName;
             }
             throw new RuntimeException("Schema class not found: {$schemaName}");
@@ -561,7 +596,8 @@ Notes:
 
         // Try with default namespace
         $defaultClass = 'App\\Schemas\\' . $schemaName;
-        if (class_exists($defaultClass)) {
+        if (class_exists($defaultClass) && is_subclass_of($defaultClass, SchemaBase::class)) {
+            /** @var SchemaClass $defaultClass */
             return $defaultClass;
         }
 
@@ -577,7 +613,7 @@ Notes:
     private function getShortClassName(string $fullyQualifiedName): string
     {
         $parts = explode('\\', $fullyQualifiedName);
-        return array_pop($parts);
+        return array_pop($parts) ?? '';
     }
 
     /**
