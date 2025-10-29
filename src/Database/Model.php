@@ -13,6 +13,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Primordyx\Database;
 
 use AllowDynamicProperties;
@@ -1691,13 +1692,41 @@ abstract class Model implements JsonSerializable
      *     public function rules(): array
      *     {
      *         return [
-     *             'email' => 'required|email|unique:users,email',
-     *             'name' => 'required|min:2|max:100',
-     *             'age' => 'integer|min:0|max:150',
-     *             'password' => 'required|min:8'
+     *             // Integer - validates whole numbers only (no decimals)
+     *             'age' => 'integer|min:0|max:120',
+     *             'user_id' => 'required|integer',
+     *             'quantity' => 'integer|min:1',
+     *             'parent_id' => 'integer|exists:users,id',
+     *
+     *             // MinLength - validates minimum string length (character count)
+     *             'username' => 'required|minLength:3|maxLength:30',
+     *             'password' => 'required|minLength:8',
+     *             'bio' => 'minLength:10',  // Optional field but if provided, must be 10+ chars
+     *             'nickname' => 'minLength:2|alphaDash',
+     *
+     *             // MaxLength - validates maximum string length (character count)
+     *             'first_name' => 'required|alpha|maxLength:50',
+     *             'postal_code' => 'required|maxLength:10',
+     *             'short_description' => 'maxLength:255',  // Fits in VARCHAR(255)
+     *
+     *             // Alpha - only letters (a-z, A-Z), no spaces or numbers
+     *             'first_name' => 'required|alpha|maxLength:50',
+     *             'country_code' => 'required|alpha|minLength:2|maxLength:2',  // Like 'US', 'CA'
+     *             'middle_initial' => 'alpha|maxLength:1',
+     *
+     *             // AlphaNum - only letters and numbers, no spaces or special chars
+     *             'product_code' => 'required|alphaNum|minLength:6|maxLength:12',
+     *             'tracking_number' => 'alphaNum|maxLength:20',
+     *
+     *             // AlphaDash - letters, numbers, dashes, and underscores (perfect for slugs/usernames)
+     *             'slug' => 'required|alphaDash|maxLength:100|unique:posts,slug',
+     *             'api_key' => 'required|alphaDash|minLength:32|maxLength:32',
+     *             'reference_code' => 'alphaDash|maxLength:50',
      *         ];
-     *     }
+     *    }
+     *
      * }
+     *
      * ```
      *
      * @see isValid() For validation execution

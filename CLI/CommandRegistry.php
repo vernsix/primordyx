@@ -40,6 +40,7 @@ class CommandRegistry
         $this->register(new MessageQueueConsumeCommand());
         $this->register(new MessageQueuePublishCommand());
         $this->register(new VersionCommand());
+        $this->register(new SchemaCommand());
     }
 
     /**

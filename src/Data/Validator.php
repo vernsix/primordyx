@@ -23,7 +23,7 @@ use Primordyx\Database\QueryTracker;
  * Class Validator
  *
  * A utility class to validate associative arrays against field rules.
- * Supports rule strings (e.g., "required|email|min:18") or callables for custom logic.
+ * Supports rule strings (e.g., "required|email|minLength:18") or callables for custom logic.
  * Returns an array of error messages per field — does not throw exceptions.
  *
  * Performs validation on form or data arrays using string-based rule syntax or callables.
@@ -66,6 +66,13 @@ class Validator
             // String DSL rule
             foreach (explode('|', $definition) as $rule) {
                 [$verb, $param] = array_pad(explode(':', $rule, 2), 2, null);
+
+                // Special handling for nullable
+                if ($verb === 'nullable' && ($value === null || $value === '')) {
+                    // Skip all remaining validations for this field
+                    break;
+                }
+
                 $method = 'rule' . ucfirst($verb);
                 if (method_exists(__CLASS__, $method)) {
                     $msg = self::$method($value, $param, $field, $data);
@@ -228,5 +235,231 @@ class Validator
         if (in_array($value, [0, 1, '0', '1'], true)) return null;
         return 'must be a boolean (true/false or 0/1).';
     }
+
+    /**
+     * Checks if the value is an integer (not float, not decimal).
+     *
+     * Validates that the value is either:
+     * - An integer type
+     * - A numeric string that represents a whole number (no decimals)
+     *
+     * Allows null/empty values to pass (for optional fields).
+     * Use 'required|integer' to enforce both presence and integer type.
+     *
+     * note: somehow this was deleted in prior versions.  Doh!
+     *
+     * @param mixed $value The value to validate
+     * @return string|null Error message if validation fails, null on success
+     * @since 1.0.4
+     *
+     * @example Valid integers:
+     * - 42 (integer)
+     * - "42" (numeric string)
+     * - "-10" (negative numeric string)
+     * - 0 (zero)
+     * - "0" (string zero)
+     *
+     * @example Invalid integers:
+     * - 3.14 (float)
+     * - "3.14" (decimal string)
+     * - "42.0" (decimal notation)
+     * - "abc" (non-numeric)
+     * - true/false (boolean)
+     */
+    protected static function ruleInteger(mixed $value): ?string
+    {
+        // Allow null or empty string to pass (for optional fields)
+        if ($value === null || $value === '') {
+            return null;
+        }
+
+        // Check if it's an integer type
+        if (is_int($value)) {
+            return null;
+        }
+
+        // Check if it's a numeric string representing a whole number
+        if (is_string($value) && is_numeric($value)) {
+            // Use filter_var to strictly validate integer strings
+            // This rejects decimals like "3.14" or "42.0"
+            if (filter_var($value, FILTER_VALIDATE_INT) !== false) {
+                return null;
+            }
+        }
+
+        return 'must be an integer.';
+    }
+
+    /**
+     * Validates minimum string length (different from numeric min).
+     *
+     * @param mixed $value
+     * @param string|null $param Minimum length
+     * @return string|null
+     */
+    protected static function ruleMinLength(mixed $value, string|null $param): ?string
+    {
+        if ($value === null || $value === '') return null;
+        $length = mb_strlen((string)$value);
+        return ($length < (int)$param) ? "must be at least $param characters." : null;
+    }
+
+    /**
+     * Validates maximum string length (different from numeric max).
+     *
+     * @param mixed $value
+     * @param string|null $param Maximum length
+     * @return string|null
+     */
+    protected static function ruleMaxLength(mixed $value, string|null $param): ?string
+    {
+        if ($value === null || $value === '') return null;
+        $length = mb_strlen((string)$value);
+        return ($length > (int)$param) ? "must be no more than $param characters." : null;
+    }
+
+    /**
+     * Validates that value contains only alphabetic characters.
+     *
+     * @param mixed $value
+     * @return string|null
+     */
+    protected static function ruleAlpha(mixed $value): ?string
+    {
+        if ($value === null || $value === '') return null;
+        return !ctype_alpha((string)$value) ? 'must contain only letters.' : null;
+    }
+
+    /**
+     * Validates that value contains only alphanumeric characters.
+     *
+     * @param mixed $value
+     * @return string|null
+     */
+    protected static function ruleAlphaNum(mixed $value): ?string
+    {
+        if ($value === null || $value === '') return null;
+        return !ctype_alnum((string)$value) ? 'must contain only letters and numbers.' : null;
+    }
+
+    /**
+     * Validates that value contains only alphanumeric characters, dashes, and underscores.
+     * Perfect for usernames, slugs, etc.
+     *
+     * @param mixed $value
+     * @return string|null
+     */
+    protected static function ruleAlphaDash(mixed $value): ?string
+    {
+        if ($value === null || $value === '') return null;
+        return !preg_match('/^[\w\-]+$/u', (string)$value)
+            ? 'must contain only letters, numbers, dashes, and underscores.' : null;
+    }
+
+    /**
+     * Marks field as explicitly nullable - skips all other validations if null.
+     * Must be processed FIRST in the validation chain.
+     *
+     * @param mixed $value
+     * @return string|null
+     */
+    protected static function ruleNullable(mixed $value): ?string
+    {
+        // This just marks the field as nullable
+        // The actual logic needs to be in the validate() method
+        return null;
+    }
+
+    /**
+     * Validates datetime format, optionally checking against a specific format.
+     * Default format is MySQL DATETIME: 'Y-m-d H:i:s'
+     *
+     * @param mixed $value
+     * @param string|null $param Optional datetime format (default: Y-m-d H:i:s)
+     * @return string|null
+     */
+    protected static function ruleDatetime(mixed $value, string|null $param = null): ?string
+    {
+        if ($value === null || $value === '') return null;
+
+        // Default to MySQL datetime format if no format specified
+        $format = $param ?? 'Y-m-d H:i:s';
+
+        // If it's already a DateTime object, it's valid
+        if ($value instanceof \DateTime || $value instanceof \DateTimeInterface) {
+            return null;
+        }
+
+        // Try to create DateTime from the format
+        $date = \DateTime::createFromFormat($format, (string)$value);
+
+        // Check if date is valid and matches the original input
+        // The second check ensures "2024-02-30" doesn't validate as "2024-03-01"
+        if (!$date || $date->format($format) !== (string)$value) {
+            return match($format) {
+                'Y-m-d H:i:s' => 'must be a valid datetime (YYYY-MM-DD HH:MM:SS).',
+                'Y-m-d' => 'must be a valid date (YYYY-MM-DD).',
+                'H:i:s' => 'must be a valid time (HH:MM:SS).',
+                default => "must be a valid datetime in format $format."
+            };
+        }
+
+        return null;
+    }
+
+    /**
+     * Validates date format (without time).
+     * Alias for datetime with Y-m-d format.
+     *
+     * @param mixed $value
+     * @return string|null
+     */
+    protected static function ruleDate(mixed $value): ?string
+    {
+        return self::ruleDatetime($value, 'Y-m-d');
+    }
+
+    /**
+     * Validates time format (without date).
+     *
+     * @param mixed $value
+     * @param string|null $param Format like 'H:i:s' or 'H:i'
+     * @return string|null
+     */
+    protected static function ruleTime(mixed $value, string|null $param = null): ?string
+    {
+        $format = $param ?? 'H:i:s';
+        return self::ruleDatetime($value, $format);
+    }
+
+    /**
+     * Validates timestamp is within MySQL TIMESTAMP range.
+     * (1970-01-01 00:00:01 to 2038-01-19 03:14:07 UTC)
+     *
+     * @param mixed $value Unix timestamp or datetime string
+     * @return string|null
+     */
+    protected static function ruleTimestamp(mixed $value): ?string
+    {
+        if ($value === null || $value === '') return null;
+
+        // Convert to timestamp if it's a datetime string
+        $timestamp = is_numeric($value)
+            ? (int)$value
+            : strtotime((string)$value);
+
+        if ($timestamp === false) {
+            return 'must be a valid timestamp.';
+        }
+
+        // MySQL TIMESTAMP range limits
+        $min = strtotime('1970-01-01 00:00:01 UTC');
+        $max = strtotime('2038-01-19 03:14:07 UTC');
+
+        return ($timestamp < $min || $timestamp > $max)
+            ? 'must be between 1970-01-01 00:00:01 and 2038-01-19 03:14:07.'
+            : null;
+    }
+
 
 }
